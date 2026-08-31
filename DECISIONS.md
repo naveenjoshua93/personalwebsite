@@ -43,3 +43,11 @@ Typefaces: Clash Display (headlines), Switzer (body), IBM Plex Mono (labels), al
 - Vercel was declined because the Hobby plan prohibits commercial use, making it the only option with a bill, and Next.js ships more client JavaScript than the brief allows. Eleventy plus GitHub Pages was declined for weak MDX support, no redirect handling, and GitHub's terms discouraging business sites.
 - Large video files never live in the repo or on Pages. Ambient loops stay small and self-hosted; workflow demo films go to a video host (YouTube unlisted or Cloudflare Stream) when produced.
 - Videos on the site (owner request): ambient loops, a short home page explainer, and screencast workflow demos. Site copy stays vendor-neutral about AI tooling; no testimonial videos.
+
+## Post-Gate-3 additions (2026-08-31, owner approved)
+
+- Positioning line: "We only take must-win deals." Rendered as a banner under the hero.
+- Target market copy is "B2B SaaS and IT services" (owner's call, replacing "B2B technology").
+- **The Armory**: a filterable resource library (format x service x domain) for thought leadership PDFs, situation decks, templates, and films. Filter chips in the neo-brutalist style. Only artifacts that exist as real files ship; the taxonomy is built ahead of the content.
+- Interactive features approved for the real build: deal danger diagnostic quiz, work-back planner widget, pursuit glossary, Brick 404 page, and the W-A-R siren easter egg. All client-side, no data capture in v1.
+- Custom crosshair cursor and press-down button interactions sitewide.
