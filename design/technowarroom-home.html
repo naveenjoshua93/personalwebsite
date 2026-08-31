@@ -15,7 +15,9 @@
     --mono:'IBM Plex Mono',monospace;
   }
   *{margin:0;padding:0;box-sizing:border-box}
-  body{background:var(--cream);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.55;overflow-x:hidden}
+  body{background:var(--cream);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.55;overflow-x:hidden;
+       cursor:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"><line x1="14" y1="0" x2="14" y2="10" stroke="%23141110" stroke-width="3"/><line x1="14" y1="18" x2="14" y2="28" stroke="%23141110" stroke-width="3"/><line x1="0" y1="14" x2="10" y2="14" stroke="%23141110" stroke-width="3"/><line x1="18" y1="14" x2="28" y2="14" stroke="%23141110" stroke-width="3"/><circle cx="14" cy="14" r="3.5" fill="%23E6401F"/></svg>') 14 14, crosshair}
+  a,button{cursor:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"><line x1="14" y1="0" x2="14" y2="10" stroke="%23E6401F" stroke-width="4"/><line x1="14" y1="18" x2="14" y2="28" stroke="%23E6401F" stroke-width="4"/><line x1="0" y1="14" x2="10" y2="14" stroke="%23E6401F" stroke-width="4"/><line x1="18" y1="14" x2="28" y2="14" stroke="%23E6401F" stroke-width="4"/><circle cx="14" cy="14" r="4" fill="%23141110"/></svg>') 14 14, pointer}
   .wrap{max-width:1180px;margin:0 auto;padding:0 24px}
   ::selection{background:var(--mustard)}
 
@@ -33,6 +35,7 @@
        border:3px solid var(--ink);padding:10px 20px;text-decoration:none;box-shadow:5px 5px 0 var(--ink);
        display:inline-block;transition:transform .12s,box-shadow .12s}
   .btn:hover{transform:translate(2px,2px);box-shadow:2px 2px 0 var(--ink)}
+  .btn:active{transform:translate(5px,5px);box-shadow:0 0 0 var(--ink)}
 
   /* hero with radar */
   .hero{position:relative;padding:72px 0 96px;overflow:hidden}
@@ -63,7 +66,18 @@
   @keyframes wiggle{0%,100%{transform:rotate(-8deg)}50%{transform:rotate(-4deg)}}
   .stk-1{top:-16px;left:-24px;background:var(--mustard)}
   .stk-2{bottom:40px;right:-16px;background:var(--lilac);animation-delay:1s}
-  .hero-brick{position:absolute;bottom:-30px;left:-70px;width:150px;transform:rotate(-18deg);filter:drop-shadow(5px 5px 0 rgba(20,17,16,.9))}
+  .hero-brick{position:absolute;bottom:-30px;left:-70px;width:150px;filter:drop-shadow(5px 5px 0 rgba(20,17,16,.9));animation:fly 3.5s ease-in-out infinite}
+  @keyframes fly{0%,100%{transform:rotate(-18deg) translateY(0)}50%{transform:rotate(-14deg) translateY(-14px)}}
+
+  /* must-win banner */
+  .mustwin{background:var(--mustard);border-bottom:3px solid var(--ink);padding:56px 0;position:relative;overflow:hidden}
+  .mustwin h2{font-size:58px;max-width:none}
+  .mustwin h2 .no{color:transparent;-webkit-text-stroke:2.5px var(--ink)}
+  .mustwin h2 .yes{color:var(--red);text-shadow:4px 4px 0 #fff}
+  .mustwin p{margin-top:14px;font-size:18px;max-width:64ch}
+  .mustwin .siren{position:absolute;right:-40px;top:-40px;width:220px;height:220px;border-radius:50%;
+                  background:radial-gradient(circle, rgba(230,64,31,.35), transparent 65%);animation:pulse 1.6s ease-in-out infinite}
+  @keyframes pulse{0%,100%{opacity:.4;transform:scale(1)}50%{opacity:1;transform:scale(1.15)}}
 
   /* marquee */
   .marquee{background:var(--ink);border-top:3px solid var(--ink);border-bottom:3px solid var(--ink);overflow:hidden;padding:13px 0}
@@ -113,6 +127,32 @@
   .tier-chip{font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;
              border:2px solid currentColor;padding:3px 8px;display:inline-block;margin-bottom:12px}
 
+  /* armory (resource library) */
+  .filters{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:14px}
+  .filters .flabel{font-family:var(--mono);font-size:12px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:#5C564C;min-width:82px}
+  .chip{font-family:var(--mono);font-size:12.5px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;
+        background:#fff;color:var(--ink);border:2.5px solid var(--ink);padding:7px 14px;box-shadow:4px 4px 0 var(--ink);
+        transition:transform .1s,box-shadow .1s}
+  .chip:hover{transform:translate(1px,1px);box-shadow:3px 3px 0 var(--ink)}
+  .chip:active{transform:translate(4px,4px);box-shadow:0 0 0 var(--ink)}
+  .chip.on{background:var(--ink);color:var(--cream);box-shadow:4px 4px 0 var(--red)}
+  .vault{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:34px}
+  .vcard{border:3px solid var(--ink);background:#fff;padding:20px;position:relative;box-shadow:6px 6px 0 var(--ink);
+         transition:transform .12s,box-shadow .12s;display:flex;flex-direction:column;gap:10px}
+  .vcard:hover{transform:translate(-3px,-3px) rotate(-.6deg);box-shadow:9px 9px 0 var(--ink)}
+  .vcard.hide{display:none}
+  .fmt{position:absolute;top:-13px;right:12px;font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:0.08em;
+       border:2px solid var(--ink);padding:3px 8px;transform:rotate(3deg)}
+  .fmt-pdf{background:var(--red);color:var(--cream)} .fmt-deck{background:var(--cobalt);color:var(--cream)}
+  .fmt-template{background:var(--green);color:var(--cream)} .fmt-video{background:var(--mustard);color:var(--ink)}
+  .vcard h3{font-family:var(--display);font-weight:600;font-size:18.5px;line-height:1.15;margin-top:6px}
+  .vcard p{font-size:13.5px;color:#3B3530;flex-grow:1}
+  .vtags{display:flex;flex-wrap:wrap;gap:6px}
+  .vtag{font-family:var(--mono);font-size:10.5px;letter-spacing:0.06em;text-transform:uppercase;border:1.5px solid #5C564C;color:#5C564C;padding:2px 7px}
+  .grab{font-family:var(--mono);font-size:12.5px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--red);text-decoration:none}
+  .grab:hover{color:var(--ink)}
+  .vault-empty{display:none;border:3px dashed var(--ink);padding:32px;text-align:center;font-family:var(--mono);font-size:14px;margin-top:34px}
+
   /* video */
   .feed{background:var(--ink);border-top:3px solid var(--ink);border-bottom:3px solid var(--ink);color:var(--cream)}
   .feed h2{color:var(--cream)}
@@ -132,7 +172,7 @@
   .collage{background:var(--lilac);border-top:3px solid var(--ink);border-bottom:3px solid var(--ink)}
   .collage-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;align-items:start}
   .polaroid{background:#fff;border:3px solid var(--ink);padding:14px 14px 18px;box-shadow:8px 8px 0 var(--ink)}
-  .polaroid img{width:100%;height:290px;object-fit:cover;display:block;border:2px solid var(--ink)}
+  .polaroid img,.polaroid video{width:100%;height:290px;object-fit:cover;display:block;border:2px solid var(--ink)}
   .polaroid figcaption{font-family:var(--mono);font-size:13px;margin-top:12px;text-transform:uppercase;letter-spacing:0.06em}
   .p1{transform:rotate(-3deg)} .p2{transform:rotate(1.5deg) translateY(24px)} .p3{transform:rotate(3deg)}
   .polaroid:hover{transform:rotate(0) scale(1.02);transition:transform .15s}
@@ -165,6 +205,8 @@
     .comic{grid-template-columns:1fr 1fr}
     .bento{grid-template-columns:1fr 1fr}.card,.card.tier2{grid-column:span 1}
     .collage-grid,.steps{grid-template-columns:1fr}
+    .vault{grid-template-columns:1fr 1fr}
+    .mustwin h2{font-size:34px}
     .hero-brick{display:none}
   }
 </style>
@@ -224,7 +266,7 @@
   <div class="radar" aria-hidden="true"></div>
   <div class="wrap hero-grid">
     <div>
-      <span class="kicker">Commercial pursuit support ⚡ B2B tech and IT services</span>
+      <span class="kicker">Commercial pursuit support ⚡ B2B SaaS and IT services</span>
       <h1>Big deal<br>on the table?<br><span class="hollow">Sound the</span> <span class="alarm">alarm.</span></h1>
       <p class="hero-sub">Techno War Room is the strike team for must-win pursuits. We build the proposal, the deck, the pricing, and the proof while your team stays in front of the buyer.</p>
       <div class="hero-cta">
@@ -243,8 +285,16 @@
 
 <div class="marquee" aria-hidden="true">
   <div class="marquee-track">
-    <span>RFP response</span><span class="dot">⚡</span><span>Proposal decks</span><span class="dot">⚡</span><span>Vendor assessments</span><span class="dot">⚡</span><span>Pricing and SOW</span><span class="dot">⚡</span><span>Battlecards</span><span class="dot">⚡</span><span>Case studies</span><span class="dot">⚡</span>
-    <span>RFP response</span><span class="dot">⚡</span><span>Proposal decks</span><span class="dot">⚡</span><span>Vendor assessments</span><span class="dot">⚡</span><span>Pricing and SOW</span><span class="dot">⚡</span><span>Battlecards</span><span class="dot">⚡</span><span>Case studies</span><span class="dot">⚡</span>
+    <span>RFP response</span><span class="dot">⚡</span><span>Proposal decks</span><span class="dot">⚡</span><span>Security questionnaires</span><span class="dot">⚡</span><span>Pricing and SOW</span><span class="dot">⚡</span><span>Battlecards</span><span class="dot">⚡</span><span>Case studies</span><span class="dot">⚡</span>
+    <span>RFP response</span><span class="dot">⚡</span><span>Proposal decks</span><span class="dot">⚡</span><span>Security questionnaires</span><span class="dot">⚡</span><span>Pricing and SOW</span><span class="dot">⚡</span><span>Battlecards</span><span class="dot">⚡</span><span>Case studies</span><span class="dot">⚡</span>
+  </div>
+</div>
+
+<div class="mustwin">
+  <div class="wrap" style="position:relative">
+    <div class="siren" aria-hidden="true"></div>
+    <h2><span class="no">We only take</span> <span class="yes">must-win deals.</span></h2>
+    <p>If the deal is routine, we are not your firm. If losing it would hurt for a year, book the call today.</p>
   </div>
 </div>
 
@@ -304,10 +354,104 @@
   </div>
 </section>
 
+<section id="armory">
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-tag">03 / The armory</span><h2>Grab the <span class="u">ammunition</span></h2></div>
+    <p style="max-width:66ch;margin:-28px 0 34px;color:#3B3530">Playbooks, templates, decks, and films from inside the war room. Filter by what you need. Everything here is the real material we use, published as we build it.</p>
+
+    <div class="filters" data-group="fmt">
+      <span class="flabel">Format</span>
+      <button class="chip on" data-f="all">All</button>
+      <button class="chip" data-f="pdf">PDF</button>
+      <button class="chip" data-f="deck">Deck</button>
+      <button class="chip" data-f="template">Template</button>
+      <button class="chip" data-f="video">Video</button>
+    </div>
+    <div class="filters" data-group="svc">
+      <span class="flabel">Service</span>
+      <button class="chip on" data-f="all">All</button>
+      <button class="chip" data-f="rfp">RFP</button>
+      <button class="chip" data-f="decks">Decks</button>
+      <button class="chip" data-f="security">Security</button>
+      <button class="chip" data-f="pricing">Pricing</button>
+      <button class="chip" data-f="competitive">Competitive</button>
+      <button class="chip" data-f="proof">Case studies</button>
+    </div>
+    <div class="filters" data-group="dom">
+      <span class="flabel">Domain</span>
+      <button class="chip on" data-f="all">All</button>
+      <button class="chip" data-f="saas">B2B SaaS</button>
+      <button class="chip" data-f="itservices">IT services</button>
+      <button class="chip" data-f="bfsi">BFSI</button>
+      <button class="chip" data-f="healthcare">Healthcare</button>
+    </div>
+
+    <div class="vault">
+      <div class="vcard" data-fmt="template" data-svc="rfp" data-dom="saas itservices bfsi healthcare">
+        <span class="fmt fmt-template">Template</span>
+        <h3>Compliance matrix template</h3>
+        <p>The requirement-by-requirement tracker we run every RFP through, with status and evidence columns.</p>
+        <div class="vtags"><span class="vtag">RFP</span><span class="vtag">All domains</span></div>
+        <a class="grab" href="#">Grab it ↓</a>
+      </div>
+      <div class="vcard" data-fmt="pdf" data-svc="security" data-dom="saas">
+        <span class="fmt fmt-pdf">PDF</span>
+        <h3>Answer bank structure</h3>
+        <p>How to organise reusable security answers so questionnaire season stops being a fire drill.</p>
+        <div class="vtags"><span class="vtag">Security</span><span class="vtag">B2B SaaS</span></div>
+        <a class="grab" href="#">Grab it ↓</a>
+      </div>
+      <div class="vcard" data-fmt="deck" data-svc="decks" data-dom="saas itservices">
+        <span class="fmt fmt-deck">Deck</span>
+        <h3>Executive summary skeleton</h3>
+        <p>The page-by-page shape of a proposal deck that survives an evaluation committee reading it alone.</p>
+        <div class="vtags"><span class="vtag">Decks</span><span class="vtag">SaaS + IT services</span></div>
+        <a class="grab" href="#">Grab it ↓</a>
+      </div>
+      <div class="vcard" data-fmt="template" data-svc="competitive" data-dom="saas">
+        <span class="fmt fmt-template">Template</span>
+        <h3>Battlecard template</h3>
+        <p>One page per rival: their pitch, their gaps, the trap questions to plant, and the counters.</p>
+        <div class="vtags"><span class="vtag">Competitive</span><span class="vtag">B2B SaaS</span></div>
+        <a class="grab" href="#">Grab it ↓</a>
+      </div>
+      <div class="vcard" data-fmt="pdf" data-svc="pricing" data-dom="itservices">
+        <span class="fmt fmt-pdf">PDF</span>
+        <h3>SOW assumptions checklist</h3>
+        <p>The assumptions and change-control clauses that stop scope bleeding after signature.</p>
+        <div class="vtags"><span class="vtag">Pricing</span><span class="vtag">IT services</span></div>
+        <a class="grab" href="#">Grab it ↓</a>
+      </div>
+      <div class="vcard" data-fmt="template" data-svc="rfp" data-dom="bfsi healthcare">
+        <span class="fmt fmt-template">Template</span>
+        <h3>Pursuit work-back planner</h3>
+        <p>Enter the submission date and plan backwards: reviews, drafts, sign-offs, and the panic buffer.</p>
+        <div class="vtags"><span class="vtag">RFP</span><span class="vtag">Regulated domains</span></div>
+        <a class="grab" href="#">Grab it ↓</a>
+      </div>
+      <div class="vcard" data-fmt="pdf" data-svc="proof" data-dom="saas itservices">
+        <span class="fmt fmt-pdf">PDF</span>
+        <h3>Case study interview kit</h3>
+        <p>The question set that gets a delivery team to tell the story a future buyer actually needs to hear.</p>
+        <div class="vtags"><span class="vtag">Case studies</span><span class="vtag">SaaS + IT services</span></div>
+        <a class="grab" href="#">Grab it ↓</a>
+      </div>
+      <div class="vcard" data-fmt="video" data-svc="decks" data-dom="saas itservices bfsi healthcare">
+        <span class="fmt fmt-video">Video</span>
+        <h3>Deck teardown films</h3>
+        <p>Short films where we rebuild weak proposal pages live, from wall of text to committee ready.</p>
+        <div class="vtags"><span class="vtag">Decks</span><span class="vtag">All domains</span></div>
+        <a class="grab" href="#">Watch ↓</a>
+      </div>
+    </div>
+    <div class="vault-empty">Nothing in the armory matches that combination yet. Loosen a filter.</div>
+  </div>
+</section>
+
 <div class="feed" id="feed">
   <section>
     <div class="wrap">
-      <div class="sec-head"><span class="sec-tag">03 / Live feed</span><h2>Inside <span class="ur">the room</span></h2></div>
+      <div class="sec-head"><span class="sec-tag">04 / Live feed</span><h2>Inside <span class="ur">the room</span></h2></div>
       <div class="feed-grid">
         <div class="screen">
           <span class="rec">REC</span>
@@ -326,9 +470,9 @@
 <div class="collage">
   <section>
     <div class="wrap">
-      <div class="sec-head"><span class="sec-tag">04 / The stakes</span><h2>Where deals <span class="u">get decided</span></h2></div>
+      <div class="sec-head"><span class="sec-tag">05 / The stakes</span><h2>Where deals <span class="u">get decided</span></h2></div>
       <div class="collage-grid">
-        <figure class="polaroid p1"><img src="images/boardroom.jpg" alt="Empty boardroom with a city view at sunset"><figcaption>The committee room, before you walk in</figcaption></figure>
+        <figure class="polaroid p1"><video src="images/city-loop.mp4" autoplay muted loop playsinline poster="images/boardroom.jpg" aria-label="City timelapse at night"></video><figcaption>The stakes never sleep</figcaption></figure>
         <figure class="polaroid p2"><img src="images/king.jpg" alt="A chess king toppling another"><figcaption>Every approver has a move. Map it.</figcaption></figure>
         <figure class="polaroid p3"><img src="images/gloves.jpg" alt="A pair of black boxing gloves"><figcaption>Seven figures on the line. Gloves on.</figcaption></figure>
       </div>
@@ -338,7 +482,7 @@
 
 <section>
   <div class="wrap">
-    <div class="sec-head"><span class="sec-tag">05 / The play</span><h2>How an engagement <span class="u">runs</span></h2></div>
+    <div class="sec-head"><span class="sec-tag">06 / The play</span><h2>How an engagement <span class="u">runs</span></h2></div>
     <div class="steps">
       <div class="step"><span class="n">1</span><h3>Bring the deal</h3><p>You tell us what is live, what is due, and who decides. We tell you fast whether we can help.</p></div>
       <div class="step"><span class="n">2</span><h3>Set the room</h3><p>We agree the workstreams we carry, the dates, and what we need from your team.</p></div>
@@ -368,5 +512,31 @@
   </div>
 </footer>
 
+<script>
+  const state = { fmt:'all', svc:'all', dom:'all' };
+  document.querySelectorAll('.filters').forEach(row => {
+    const group = row.dataset.group;
+    row.addEventListener('click', e => {
+      const chip = e.target.closest('.chip');
+      if (!chip) return;
+      row.querySelectorAll('.chip').forEach(c => c.classList.remove('on'));
+      chip.classList.add('on');
+      state[group] = chip.dataset.f;
+      apply();
+    });
+  });
+  function apply() {
+    let shown = 0;
+    document.querySelectorAll('.vcard').forEach(card => {
+      const ok =
+        (state.fmt === 'all' || card.dataset.fmt === state.fmt) &&
+        (state.svc === 'all' || card.dataset.svc === state.svc) &&
+        (state.dom === 'all' || card.dataset.dom.split(' ').includes(state.dom));
+      card.classList.toggle('hide', !ok);
+      if (ok) shown++;
+    });
+    document.querySelector('.vault-empty').style.display = shown ? 'none' : 'block';
+  }
+</script>
 </body>
 </html>
