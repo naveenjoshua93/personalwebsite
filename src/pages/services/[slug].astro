@@ -1,6 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import Base from '../../layouts/Base.astro';
+import FilmMatrix from '../../components/FilmMatrix.astro';
 
 export async function getStaticPaths() {
   const services = await getCollection('services');
@@ -51,6 +52,12 @@ const stepTints = ['', 's-mustard', 's-cyan', 's-lilac', 's-red'];
       <div class="prose">
         {s.what.map((p) => <p>{p}</p>)}
       </div>
+      {s.film === 'matrix' && (
+        <div class="screen" style="margin-top:40px;border-color:var(--ink);box-shadow:10px 10px 0 var(--ink)">
+          <span class="rec">REC</span>
+          <FilmMatrix />
+        </div>
+      )}
     </div>
   </section>
 

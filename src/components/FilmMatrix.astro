@@ -1,0 +1,106 @@
+---
+// Film 02: The compliance matrix. A 12 second looping SVG animation showing
+// requirements being extracted, answered, and evidence-mapped, with honest
+// gaps flagged instead of hidden. Illustrative only; no fabricated data.
+const COLS = 10;
+const ROWS = 6;
+const X0 = 250;
+const Y0 = 120;
+const CW = 66;
+const CH = 40;
+// A fixed pattern (deterministic, not random): most cells compliant, a few gaps.
+const gaps = new Set(['2-4', '4-1', '5-7']);
+const cells: { x: number; y: number; gap: boolean; d: number }[] = [];
+for (let r = 0; r < ROWS; r++) {
+  for (let c = 0; c < COLS; c++) {
+    cells.push({
+      x: X0 + c * CW,
+      y: Y0 + r * CH,
+      gap: gaps.has(`${r}-${c}`),
+      d: 8 + (r * COLS + c) * 1.1,
+    });
+  }
+}
+const rowLabels = ['REQ-1XX', 'REQ-2XX', 'REQ-3XX', 'REQ-4XX', 'REQ-5XX', 'REQ-6XX'];
+---
+
+<svg class="film-matrix" viewBox="0 0 960 420" xmlns="http://www.w3.org/2000/svg" role="img"
+  aria-label="Animated film of a compliance matrix filling up, with gaps flagged and tracked">
+  <style>
+    .fm-mono { font: 600 13px 'IBM Plex Mono', monospace; letter-spacing: 0.08em; }
+    .fm-cursor { animation: fmCursor 12s steps(60) infinite; }
+    @keyframes fmCursor {
+      0%, 8% { transform: translate(0, 0); opacity: 1; }
+      74% { transform: translate(594px, 200px); opacity: 1; }
+      78%, 100% { transform: translate(594px, 200px); opacity: 0; }
+    }
+    .fm-verdict { opacity: 0; transform: scale(2.4) rotate(10deg); transform-origin: 480px 350px; animation: fmVerdict 12s ease-out infinite; }
+    @keyframes fmVerdict {
+      0%, 78% { opacity: 0; transform: scale(2.4) rotate(10deg); }
+      82% { opacity: 1; transform: scale(1) rotate(-2deg); }
+      96% { opacity: 1; transform: scale(1) rotate(-2deg); }
+      100% { opacity: 0; transform: scale(1) rotate(-2deg); }
+    }
+  </style>
+
+  <rect width="960" height="420" fill="#141110" />
+  <rect x="14" y="14" width="932" height="392" fill="none" stroke="#3B3530" stroke-width="2" />
+
+  <text class="fm-mono" x="34" y="48" fill="#F3EDE1">TWR ⚡ FILM 02</text>
+  <text class="fm-mono" x="34" y="70" fill="#7FD8D4">EVERY REQUIREMENT, COUNTED</text>
+
+  <!-- row labels -->
+  {rowLabels.map((label, r) => (
+    <text class="fm-mono" x="150" y={Y0 + r * CH + 26} fill="#5C564C" font-size="12">{label}</text>
+  ))}
+
+  <!-- grid -->
+  {cells.map((c) => (
+    <>
+      <rect x={c.x} y={c.y} width={CW - 6} height={CH - 6} fill="none" stroke="#3B3530" stroke-width="1.5" />
+      <rect class="fm-cell" x={c.x} y={c.y} width={CW - 6} height={CH - 6}
+        fill={c.gap ? '#E6401F' : '#1E7A4E'} style={`--s: ${c.d};`} />
+    </>
+  ))}
+
+  <!-- cursor highlight that walks the grid -->
+  <rect class="fm-cursor" x={X0 - 3} y={Y0 - 3} width={CW} height={CH} fill="none" stroke="#F2B33D" stroke-width="3" />
+
+  <!-- legend -->
+  <g>
+    <rect x="250" y="368" width="14" height="14" fill="#1E7A4E" />
+    <text class="fm-mono" x="272" y="380" fill="#F3EDE1" font-size="12">COMPLIANT, EVIDENCE MAPPED</text>
+    <rect x="530" y="368" width="14" height="14" fill="#E6401F" />
+    <text class="fm-mono" x="552" y="380" fill="#F3EDE1" font-size="12">GAP, MITIGATION WRITTEN</text>
+  </g>
+
+  <!-- verdict stamp -->
+  <g class="fm-verdict">
+    <rect x="300" y="320" width="360" height="56" fill="#141110" stroke="#F2B33D" stroke-width="5" />
+    <text x="480" y="358" fill="#F2B33D" text-anchor="middle" font-family="'Clash Display','Arial Black',sans-serif" font-weight="700" font-size="26">NOTHING UNANSWERED</text>
+  </g>
+</svg>
+
+<style>
+  .film-matrix { width: 100%; display: block; }
+  .film-matrix :global(.fm-cell) { opacity: 0; }
+</style>
+
+<script>
+  const LOOP_MS = 12000;
+  document.querySelectorAll<SVGSVGElement>('.film-matrix').forEach((svg) => {
+    svg.querySelectorAll<SVGElement>('.fm-cell').forEach((el) => {
+      const s = (parseFloat(el.style.getPropertyValue('--s')) || 0) / 100;
+      el.animate(
+        [
+          { opacity: 0, offset: 0 },
+          { opacity: 0, offset: s },
+          { opacity: 0.9, offset: Math.min(s + 0.015, 0.96) },
+          { opacity: 0.9, offset: 0.97 },
+          { opacity: 0, offset: 1 },
+        ],
+        { duration: LOOP_MS, iterations: Infinity }
+      );
+    });
+  });
+</script>

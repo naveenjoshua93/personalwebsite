@@ -1,0 +1,176 @@
+---
+// Film 01: How a pursuit runs. A 16 second looping SVG animation.
+// Drawn and timed entirely in code, so the film shows the real process
+// without stock footage. Staggered elements carry --s/--e (loop percent)
+// and are driven by the Web Animations API script below.
+const docLines = [
+  { y: 150, w: 180, d: 22 }, { y: 168, w: 220, d: 24 }, { y: 186, w: 160, d: 26 },
+  { y: 214, w: 230, d: 29 }, { y: 232, w: 200, d: 32 }, { y: 250, w: 240, d: 35 },
+  { y: 278, w: 190, d: 38 }, { y: 296, w: 230, d: 41 }, { y: 314, w: 170, d: 44 },
+  { y: 342, w: 210, d: 47 }, { y: 360, w: 240, d: 50 }, { y: 378, w: 150, d: 53 },
+];
+const checks = [
+  { y: 150, d: 56 }, { y: 214, d: 60 }, { y: 278, d: 64 }, { y: 342, d: 68 },
+];
+const phases = [
+  { x: 120, label: 'BRIEF', d: 5 },
+  { x: 300, label: 'EXTRACT', d: 20 },
+  { x: 480, label: 'BUILD', d: 38 },
+  { x: 660, label: 'PRESSURE TEST', d: 58 },
+  { x: 840, label: 'SUBMIT', d: 76 },
+];
+const bars = [
+  { y: 190, label: 'RESPONSE', color: '#E6401F', start: 20, end: 52 },
+  { y: 250, label: 'DECK', color: '#2B3FD8', start: 32, end: 62 },
+  { y: 310, label: 'COMMERCIALS', color: '#F2B33D', start: 46, end: 72 },
+];
+---
+
+<svg class="film-pursuit" viewBox="0 0 960 540" xmlns="http://www.w3.org/2000/svg" role="img"
+  aria-label="Animated film of how a pursuit runs: brief, extract, build, pressure test, submit">
+  <style>
+    .fp-mono { font: 600 13px 'IBM Plex Mono', monospace; letter-spacing: 0.08em; }
+    .fp-sweep { transform-origin: 830px 105px; animation: fpSweep 4s linear infinite; }
+    @keyframes fpSweep { to { transform: rotate(360deg); } }
+    .fp-brick { animation: fpFly 16s linear infinite; }
+    @keyframes fpFly {
+      0% { transform: translate(-180px, 20px); }
+      10% { transform: translate(1060px, -30px); }
+      100% { transform: translate(1060px, -30px); }
+    }
+    .fp-stamp { opacity: 0; transform: scale(3) rotate(-20deg); transform-origin: 230px 290px; animation: fpStamp 16s ease-out infinite; }
+    @keyframes fpStamp {
+      0%, 76% { opacity: 0; transform: scale(3) rotate(-20deg); }
+      80% { opacity: 1; transform: scale(1) rotate(-8deg); }
+      96% { opacity: 1; transform: scale(1) rotate(-8deg); }
+      100% { opacity: 0; transform: scale(1) rotate(-8deg); }
+    }
+    .fp-dot { animation: fpDot 16s linear infinite; }
+    @keyframes fpDot {
+      0%, 5% { transform: translateX(0); }
+      20% { transform: translateX(180px); }
+      38% { transform: translateX(360px); }
+      58% { transform: translateX(540px); }
+      76%, 100% { transform: translateX(720px); }
+    }
+  </style>
+
+  <rect width="960" height="540" fill="#141110" />
+  <rect x="14" y="14" width="932" height="512" fill="none" stroke="#3B3530" stroke-width="2" />
+
+  <text class="fp-mono" x="34" y="48" fill="#F3EDE1">TWR ⚡ FILM 01</text>
+  <text class="fp-mono" x="34" y="70" fill="#7FD8D4">HOW A PURSUIT RUNS</text>
+
+  <!-- radar -->
+  <g>
+    <circle cx="830" cy="105" r="62" fill="none" stroke="#3B3530" stroke-width="2" />
+    <circle cx="830" cy="105" r="38" fill="none" stroke="#3B3530" stroke-width="2" />
+    <circle cx="830" cy="105" r="14" fill="none" stroke="#3B3530" stroke-width="2" />
+    <g class="fp-sweep"><path d="M830 105 L830 43 A62 62 0 0 1 883 74 Z" fill="#1E7A4E" opacity="0.5" /></g>
+  </g>
+
+  <!-- the document being built -->
+  <g>
+    <rect x="80" y="110" width="300" height="300" fill="#F3EDE1" />
+    <rect x="80" y="110" width="300" height="26" fill="#E6401F" />
+    <text class="fp-mono" x="92" y="128" fill="#F3EDE1" font-size="12">THE_RESPONSE.DOC</text>
+    {docLines.map((l) => (
+      <rect class="fp-line" x="120" y={l.y} width={l.w} height="8" fill="#5C564C"
+        style={`transform-origin: 120px ${l.y}px; --s: ${l.d};`} />
+    ))}
+    {checks.map((c) => (
+      <g class="fp-appear" style={`--s: ${c.d};`}>
+        <rect x="94" y={c.y - 2} width="14" height="14" fill="none" stroke="#1E7A4E" stroke-width="2.5" />
+        <path d={`M96 ${c.y + 4} l4 5 l7 -10`} fill="none" stroke="#1E7A4E" stroke-width="3" />
+      </g>
+    ))}
+  </g>
+
+  <!-- workstream bars -->
+  <g>
+    {bars.map((b) => (
+      <g>
+        <text class="fp-mono" x="440" y={b.y - 10} fill="#F3EDE1" font-size="12">{b.label}</text>
+        <rect x="440" y={b.y} width="300" height="14" fill="#3B3530" />
+        <rect class="fp-bar" x="440" y={b.y} width="300" height="14" fill={b.color}
+          style={`transform-origin: 440px ${b.y}px; --s: ${b.start}; --e: ${b.end};`} />
+      </g>
+    ))}
+  </g>
+
+  <!-- timeline -->
+  <g>
+    <line x1="120" y1="470" x2="840" y2="470" stroke="#3B3530" stroke-width="3" />
+    {phases.map((p) => (
+      <g>
+        <circle cx={p.x} cy="470" r="7" fill="#3B3530" />
+        <circle class="fp-appear" cx={p.x} cy="470" r="7" fill="#E6401F" style={`--s: ${p.d};`} />
+        <text class="fp-mono fp-appear" x={p.x} y="500" fill="#F3EDE1" font-size="11" text-anchor="middle" style={`--s: ${p.d};`}>{p.label}</text>
+      </g>
+    ))}
+    <circle class="fp-dot" cx="120" cy="470" r="11" fill="none" stroke="#F2B33D" stroke-width="3" />
+  </g>
+
+  <!-- stamp -->
+  <g class="fp-stamp">
+    <rect x="110" y="255" width="250" height="66" fill="none" stroke="#E6401F" stroke-width="6" />
+    <text x="235" y="299" fill="#E6401F" text-anchor="middle" font-family="'Clash Display','Arial Black',sans-serif" font-weight="700" font-size="34">SUBMITTED</text>
+  </g>
+
+  <!-- brick flies through at the start -->
+  <g class="fp-brick">
+    <g transform="scale(0.55)"><use href="#brickhero"></use></g>
+  </g>
+</svg>
+
+<style>
+  .film-pursuit { width: 100%; display: block; }
+  .film-pursuit :global(.fp-line) { transform: scaleX(0); }
+  .film-pursuit :global(.fp-bar) { transform: scaleX(0); }
+  .film-pursuit :global(.fp-appear) { opacity: 0; }
+</style>
+
+<script>
+  const LOOP_MS = 16000;
+  document.querySelectorAll<SVGSVGElement>('.film-pursuit').forEach((svg) => {
+    const startOf = (el: SVGElement) => parseFloat(el.style.getPropertyValue('--s')) || 0;
+    svg.querySelectorAll<SVGElement>('.fp-line').forEach((el) => {
+      const s = startOf(el) / 100;
+      el.animate(
+        [
+          { transform: 'scaleX(0)', offset: 0 },
+          { transform: 'scaleX(0)', offset: s },
+          { transform: 'scaleX(1)', offset: Math.min(s + 0.04, 1) },
+          { transform: 'scaleX(1)', offset: 1 },
+        ],
+        { duration: LOOP_MS, iterations: Infinity }
+      );
+    });
+    svg.querySelectorAll<SVGElement>('.fp-appear').forEach((el) => {
+      const s = startOf(el) / 100;
+      el.animate(
+        [
+          { opacity: 0, offset: 0 },
+          { opacity: 0, offset: s },
+          { opacity: 1, offset: Math.min(s + 0.02, 0.96) },
+          { opacity: 1, offset: 0.97 },
+          { opacity: 0, offset: 1 },
+        ],
+        { duration: LOOP_MS, iterations: Infinity }
+      );
+    });
+    svg.querySelectorAll<SVGElement>('.fp-bar').forEach((el) => {
+      const s = startOf(el) / 100;
+      const e = (parseFloat(el.style.getPropertyValue('--e')) || startOf(el) + 10) / 100;
+      el.animate(
+        [
+          { transform: 'scaleX(0)', offset: 0 },
+          { transform: 'scaleX(0)', offset: s },
+          { transform: 'scaleX(1)', offset: e },
+          { transform: 'scaleX(1)', offset: 1 },
+        ],
+        { duration: LOOP_MS, iterations: Infinity }
+      );
+    });
+  });
+</script>
