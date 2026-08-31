@@ -27,7 +27,7 @@ const brick = (x, y, s) => `
   <rect x="98" y="150" width="30" height="52" fill="#2B3FD8" stroke="#141110" stroke-width="5"/>
   <rect x="66" y="158" width="30" height="52" fill="#2B3FD8" stroke="#141110" stroke-width="5"/>
   <rect x="58" y="84" width="76" height="72" rx="4" fill="#F2B33D" stroke="#141110" stroke-width="5"/>
-  <text x="96" y="132" font-family="Arial" font-weight="900" font-size="30" text-anchor="middle" fill="#141110">TW</text>
+  <text x="96" y="132" font-family="Arial" font-weight="900" font-size="30" text-anchor="middle" fill="#141110">TL</text>
   <rect x="118" y="92" width="52" height="24" rx="10" fill="#F2B33D" stroke="#141110" stroke-width="5"/>
   <rect x="22" y="92" width="52" height="24" rx="10" fill="#F2B33D" stroke="#141110" stroke-width="5"/>
   <rect x="66" y="22" width="60" height="52" rx="6" fill="#FFD84D" stroke="#141110" stroke-width="5"/>
@@ -42,8 +42,8 @@ async function ogCard() {
   const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630">
   <rect width="1200" height="630" fill="#141110"/>
   <rect x="28" y="28" width="1144" height="574" fill="none" stroke="#F3EDE1" stroke-width="4"/>
-  <rect x="70" y="80" width="475" height="64" fill="#F3EDE1"/>
-  <text x="90" y="125" font-family="Arial" font-weight="900" font-size="36" fill="#141110">TECHNO WAR ROOM</text>
+  <rect x="70" y="80" width="235" height="64" fill="#F3EDE1"/>
+  <text x="90" y="125" font-family="Arial" font-weight="900" font-size="36" fill="#141110">TECLATO</text>
   <text x="70" y="270" font-family="Arial" font-weight="900" font-size="86" fill="#F3EDE1">BIG DEAL ON</text>
   <text x="70" y="362" font-family="Arial" font-weight="900" font-size="86" fill="#F3EDE1">THE TABLE?</text>
   <text x="70" y="464" font-family="Arial" font-weight="900" font-size="74" fill="#E6401F">SOUND THE ALARM.</text>

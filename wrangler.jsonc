@@ -2,7 +2,7 @@
   // Cloudflare config: deploys the static Astro build as Worker assets.
   // Only used if the project is set up via the Workers flow; the classic
   // Pages flow ignores this file and just serves the dist directory.
-  "name": "technowarroom",
+  "name": "teclato",
   "compatibility_date": "2026-08-31",
   "assets": {
     "directory": "./dist",

@@ -15,20 +15,20 @@ const ogUrl = new URL(ogImage, site);
 
 // Social profiles. Placeholder handles to claim; swap here once the accounts exist.
 const socials = [
-  { label: 'LinkedIn', href: 'https://www.linkedin.com/company/technowarroom' },
-  { label: 'Substack', href: 'https://technowarroom.substack.com' },
-  { label: 'YouTube', href: 'https://www.youtube.com/@technowarroom' },
-  { label: 'X', href: 'https://x.com/technowarroom' },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/company/teclato' },
+  { label: 'Substack', href: 'https://teclato.substack.com' },
+  { label: 'YouTube', href: 'https://www.youtube.com/@teclato' },
+  { label: 'X', href: 'https://x.com/teclato' },
 ];
 
 const orgLd = {
   '@context': 'https://schema.org',
   '@type': 'ProfessionalService',
-  name: 'Techno War Room',
+  name: 'Teclato',
   url: site.href,
   description:
     'Commercial pursuit support for B2B SaaS and IT services firms: RFP responses, proposal decks, security questionnaires, pricing and SOW, startup pitch decks, competitive positioning, and case studies.',
-  email: 'hello@technowarroom.com',
+  email: 'hello@teclato.com',
   sameAs: socials.map((s) => s.href),
 };
 ---
@@ -46,7 +46,7 @@ const orgLd = {
     <link rel="preload" href="/fonts/switzer-400.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="/fonts/ibm-plex-mono-600.woff2" as="font" type="font/woff2" crossorigin />
     <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="Techno War Room" />
+    <meta property="og:site_name" content="Teclato" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical.href} />
@@ -66,7 +66,7 @@ const orgLd = {
 
     <div class="bar">
       <div class="bar-in">
-        <a class="logo" href="/"><span class="t">Techno</span> War Room</a>
+        <a class="logo" href="/"><span class="t">Tec</span>lato</a>
         <button class="menu-btn" aria-expanded="false" aria-controls="primary-nav">Menu</button>
         <nav id="primary-nav" aria-label="Primary">
           <a href="/services/">Services</a>
@@ -86,11 +86,11 @@ const orgLd = {
       <div class="wrap">
         <div class="foot">
           <div class="foot-col">
-            <h4>Techno War Room</h4>
+            <h4>Teclato</h4>
             <a href="/about/">About the practice</a>
             <a href="/contact/">Contact and booking</a>
             <a href="/#armory">The Armory</a>
-            <a href="mailto:hello@technowarroom.com">hello@technowarroom.com</a>
+            <a href="mailto:hello@teclato.com">hello@teclato.com</a>
           </div>
           <div class="foot-col">
             <h4>Pursuit support</h4>
@@ -114,7 +114,7 @@ const orgLd = {
         </div>
         <div class="foot-legal">
           <span>Commercial pursuit support for B2B SaaS and IT services</span>
-          <span>&copy; 2026 Techno War Room</span>
+          <span>&copy; 2026 Teclato</span>
         </div>
       </div>
     </footer>
