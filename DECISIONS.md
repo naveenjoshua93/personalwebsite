@@ -52,6 +52,10 @@ Typefaces: Clash Display (headlines), Switzer (body), IBM Plex Mono (labels), al
 - Interactive features approved for the real build: deal danger diagnostic quiz, work-back planner widget, pursuit glossary, Brick 404 page, and the W-A-R siren easter egg. All client-side, no data capture in v1.
 - Custom crosshair cursor and press-down button interactions sitewide.
 
+## Gate 8: Contact and booking (2026-08-31)
+
+**Decision: email only for now.** Cal.com, Calendly, and SavvyCal were compared (cost, embed weight, privacy); the owner chose to defer the scheduler. The contact page's primary action is a subject-prefilled mailto. The scheduler slot remains wired: setting BOOKING_URL in src/pages/contact.astro swaps the primary button to a booking link without layout changes. Recommendation on record when ready: Cal.com (free, open source, zero JS as a plain link).
+
 ## Gate 4: Information architecture (2026-08-31)
 
 **Decision: Variant A, flat and shallow.**

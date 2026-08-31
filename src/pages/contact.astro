@@ -1,9 +1,10 @@
 ---
 import Base from '../layouts/Base.astro';
 
-// Scheduler slot. Swap this one constant when the booking provider is decided
-// (Gate 8); the page layout does not change.
-const BOOKING_URL = 'https://cal.com/technowarroom/live-deal';
+// Scheduler slot. Gate 8 decision was "email only for now": leave BOOKING_URL
+// empty until a provider is chosen; setting it swaps the primary button back
+// to a scheduler without touching the layout.
+const BOOKING_URL = '';
 
 const faqs = [
   {
@@ -41,7 +42,7 @@ const faqLd = {
 
 <Base
   title="Contact | Techno War Room"
-  description="Book a 30 minute call about a live pursuit, or write to us. We answer within one business day with an honest yes or no."
+  description="Tell us about a live pursuit. We answer within one business day with an honest yes or no."
 >
   <Fragment slot="head">
     <script type="application/ld+json" set:html={JSON.stringify(faqLd)} />
@@ -61,11 +62,15 @@ const faqLd = {
     <div class="wrap contact-grid">
       <div class="book-card">
         <span class="sticker stk-1" style="top:-18px">Fastest route</span>
-        <h2>Book the call</h2>
-        <p class="meta">30 minutes ⚡ Video call ⚡ Bring the deadline</p>
-        <p>One conversation about your live pursuit: what has landed, when it is due, who decides, and which workstreams are underwater. You leave with our honest read, whether or not you hire us.</p>
-        <a class="btn btn-big" style="margin-top:24px" href={BOOKING_URL} rel="noopener" target="_blank">Pick a time</a>
-        <p style="margin-top:22px;font-size:15px">Rather write first? <a href="mailto:hello@technowarroom.com">hello@technowarroom.com</a>. A line about the deal and the date is enough.</p>
+        <h2>Tell us about the deal</h2>
+        <p class="meta">One email ⚡ Reply within a business day</p>
+        <p>Write a few lines about your live pursuit: what has landed, when it is due, who decides, and which workstreams are underwater. We come back with our honest read and a proposed call, whether or not you hire us.</p>
+        {BOOKING_URL ? (
+          <a class="btn btn-big" style="margin-top:24px" href={BOOKING_URL} rel="noopener" target="_blank">Pick a time</a>
+        ) : (
+          <a class="btn btn-big" style="margin-top:24px" href="mailto:hello@technowarroom.com?subject=Live%20pursuit">Email the war room</a>
+        )}
+        <p style="margin-top:22px;font-size:15px">The address, for your own client: <a href="mailto:hello@technowarroom.com">hello@technowarroom.com</a>. A line about the deal and the date is enough.</p>
       </div>
       <div>
         <h2 style="font-size:28px">What happens after you reach out</h2>
