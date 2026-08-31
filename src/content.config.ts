@@ -18,6 +18,7 @@ const services = defineCollection({
     steps: z.array(z.object({ title: z.string(), text: z.string(), need: z.string().optional() })),
     excludes: z.array(z.string()),
     shape: z.array(z.object({ k: z.string(), v: z.string() })),
+    domains: z.array(z.object({ name: z.string(), note: z.string() })).optional(),
     related: z.array(z.object({ name: z.string(), href: z.string(), desc: z.string(), boundary: z.string().optional() })),
   }),
 });

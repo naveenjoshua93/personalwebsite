@@ -1,0 +1,80 @@
+{
+  "number": "02",
+  "name": "Proposal deck building",
+  "shortName": "Proposal decks",
+  "oneliner": "The narrative and the artefact for presented pursuits, from executive summary to the version the committee reads without you in the room.",
+  "tier": 1,
+  "color": "cobalt",
+  "metaTitle": "Proposal deck building | Techno War Room",
+  "metaDescription": "We build proposal decks for must-win pursuits: the storyline, the presented deck, the standalone reading version for evaluation committees, and the orals prep pack.",
+  "scenarios": [
+    {
+      "stamp": "The invite",
+      "title": "Down to the final three",
+      "text": "You made the shortlist. The orals are in two weeks and the current deck is forty slides of product screenshots with no argument."
+    },
+    {
+      "stamp": "The room",
+      "title": "The committee reads alone",
+      "text": "Half the evaluators never attend the presentation. They score the deck on their own screen, without your voiceover, and that score counts the same."
+    },
+    {
+      "stamp": "The rebuild",
+      "title": "Every deck starts from the last one",
+      "text": "The story is inherited from a different deal, patched by six people under deadline, and it reads exactly like that."
+    }
+  ],
+  "what": [
+    "We build the deck for a presented pursuit, storyline first. That means the executive summary structure, the flow of the argument, the slide-by-slide build in your template, and a separate reading version designed to score well without a presenter, because evaluation committees score in private.",
+    "Your team presents it. We make sure what gets presented and what gets read both land."
+  ],
+  "deliverables": [
+    { "name": "Storyline on a page", "fmt": "pdf", "desc": "The argument of the deck, agreed and signed off before a single slide is built." },
+    { "name": "Presented deck", "fmt": "deck", "desc": "The version your team performs in the room, built in your template and your voice." },
+    { "name": "Reading version", "fmt": "deck", "desc": "The standalone version for evaluators who score alone, with the voiceover written in." },
+    { "name": "Executive summary", "fmt": "doc", "desc": "The two pages a sponsor forwards upward when they want the deal approved." },
+    { "name": "Orals prep pack", "fmt": "pdf", "desc": "The questions this deck will provoke and who on your team answers each one." }
+  ],
+  "steps": [
+    { "title": "Bring the deal", "text": "We read the response so far and the audience list, and tell you what the deck has to prove.", "need": "The meeting invite and who scores" },
+    { "title": "Storyline", "text": "The whole argument on one page, agreed before slides exist. Cheap to change here, expensive later.", "need": "An hour with the deal owner" },
+    { "title": "Build", "text": "We draft slide by slide in your template, with every claim traced to something true.", "need": "SME facts on call" },
+    { "title": "Pressure test", "text": "We tear it down the way a committee would, then rebuild the pages that failed.", "need": "A dry-run audience" },
+    { "title": "Hand over", "text": "Presented version, reading version, executive summary, and the orals pack, delivered together.", "need": "Your presenter's rehearsal time" }
+  ],
+  "excludes": [
+    "We do not rebrand you. The deck lands in your template and visual identity.",
+    "We do not present to your buyer. The room is yours.",
+    "We do not invent claims or metrics to fill a slide. Thin proof gets a different argument, never a fabricated one.",
+    "We do not build the product demo. The deck frames it; your team drives it."
+  ],
+  "shape": [
+    { "k": "Format", "v": "Project, scoped to one presentation" },
+    { "k": "Typical length", "v": "One to three weeks, matched to the orals date" },
+    { "k": "Also available", "v": "Retained, for teams with a steady shortlist rate" }
+  ],
+  "domains": [
+    { "name": "B2B SaaS", "note": "Product demos dominate SaaS orals. The deck's job is the argument a demo cannot make: risk, adoption, and the commercial logic." },
+    { "name": "IT services", "note": "Services deals are people deals. The deck has to make a team and a method feel as concrete as a product." },
+    { "name": "BFSI", "note": "Committees are larger and risk officers score too. The reading version and the risk pages carry extra weight." },
+    { "name": "Healthcare", "note": "Clinical and compliance stakeholders read differently. Jargon gets translated or it gets marked down." }
+  ],
+  "related": [
+    {
+      "name": "RFP and RFI response",
+      "href": "/services/rfp-response/",
+      "desc": "The written answer that earns the invitation to present.",
+      "boundary": "The RFP is the written answer. The deck is the room performance. One narrative, two artefacts."
+    },
+    {
+      "name": "Case study and reference development",
+      "href": "/services/case-study-development/",
+      "desc": "Where the proof slides in your deck come from."
+    },
+    {
+      "name": "Competitive analysis and positioning",
+      "href": "/services/competitive-analysis/",
+      "desc": "The win themes the storyline is built on."
+    }
+  ]
+}

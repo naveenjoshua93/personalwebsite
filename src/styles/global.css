@@ -222,6 +222,11 @@ footer{border-top:3px solid var(--ink);padding:32px 0 48px}
 .shape-item{border:3px solid var(--ink);background:#fff;padding:22px;box-shadow:6px 6px 0 var(--ink)}
 .shape-item .k{font-family:var(--mono);font-size:11.5px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:#5C564C}
 .shape-item .v{font-family:var(--display);font-weight:600;font-size:22px;margin-top:8px;line-height:1.15}
+.dom-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.dom-card{border:3px solid var(--ink);background:#fff;padding:22px;box-shadow:6px 6px 0 var(--ink)}
+.dom-card p{font-size:15px;color:#3B3530;margin-top:12px}
+.dom-chip{font-family:var(--mono);font-size:12px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;
+          background:var(--lilac);border:2px solid var(--ink);padding:4px 10px;display:inline-block;transform:rotate(-1.5deg)}
 .rel-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 .rel-card{border:3px solid var(--ink);background:#fff;padding:22px;box-shadow:6px 6px 0 var(--ink);text-decoration:none;color:var(--ink);display:block;transition:transform .12s,box-shadow .12s}
 .rel-card:hover{transform:translate(-3px,-3px);box-shadow:9px 9px 0 var(--ink)}
@@ -245,7 +250,7 @@ footer{border-top:3px solid var(--ink);padding:32px 0 48px}
   .frame img{height:320px}
   .comic,.comic.three{grid-template-columns:1fr 1fr}
   .bento{grid-template-columns:1fr 1fr}.card,.card.tier2{grid-column:span 1}
-  .collage-grid,.steps,.steps.five,.shape-grid,.rel-grid{grid-template-columns:1fr}
+  .collage-grid,.steps,.steps.five,.shape-grid,.rel-grid,.dom-grid{grid-template-columns:1fr}
   .vault,.vault.mini{grid-template-columns:1fr 1fr}
   .mustwin h2{font-size:34px}
   .svc-hero .svcnum{display:none}

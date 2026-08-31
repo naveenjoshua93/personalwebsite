@@ -111,9 +111,25 @@ const stepTints = ['', 's-mustard', 's-cyan', 's-lilac', 's-red'];
     </div>
   </section>
 
+  {s.domains && (
+    <section style="padding-top:0">
+      <div class="wrap">
+        <div class="sec-head"><span class="sec-tag">07 / The terrain</span><h2>How it plays <span class="u">by domain</span></h2></div>
+        <div class="dom-grid">
+          {s.domains.map((d) => (
+            <div class="dom-card">
+              <span class="dom-chip">{d.name}</span>
+              <p>{d.note}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
   <section style="padding-top:0">
     <div class="wrap">
-      <div class="sec-head"><span class="sec-tag">07 / The armory</span><h2>Ammunition for <span class="u">this fight</span></h2></div>
+      <div class="sec-head"><span class="sec-tag">08 / The armory</span><h2>Ammunition for <span class="u">this fight</span></h2></div>
       <p style="max-width:66ch;margin:-28px 0 34px;color:#3B3530">The templates and playbooks behind this service live in the Armory, filtered to what applies here.</p>
       <a class="btn" href={`/#armory`}>Open the Armory ↗</a>
     </div>
@@ -121,7 +137,7 @@ const stepTints = ['', 's-mustard', 's-cyan', 's-lilac', 's-red'];
 
   <section style="padding-top:0">
     <div class="wrap">
-      <div class="sec-head"><span class="sec-tag">08 / Adjacent</span><h2>Related <span class="u">services</span></h2></div>
+      <div class="sec-head"><span class="sec-tag">09 / Adjacent</span><h2>Related <span class="u">services</span></h2></div>
       <div class="rel-grid">
         {s.related.map((r) => (
           <a class="rel-card" href={r.href}>

@@ -1,0 +1,79 @@
+{
+  "number": "04",
+  "name": "Pricing and SOW construction",
+  "shortName": "Pricing and SOW",
+  "oneliner": "Scope decomposition, commercial structure, assumptions, change control, and a contract shape that survives procurement.",
+  "tier": 1,
+  "color": "mustard",
+  "metaTitle": "Pricing and SOW construction | Techno War Room",
+  "metaDescription": "We construct the commercial side of must-win deals: scope decomposition, pricing structure, assumptions and exclusions, change control, and the SOW draft.",
+  "scenarios": [
+    {
+      "stamp": "The squeeze",
+      "title": "Procurement wants it line by line",
+      "text": "The buyer loves the solution. Procurement wants every line unbundled, benchmarked, and cut, and your structure was never built to survive that."
+    },
+    {
+      "stamp": "The trap",
+      "title": "Scope written in a hurry",
+      "text": "The SOW was drafted at midnight before submission. Every ambiguity in it now belongs to your delivery team."
+    },
+    {
+      "stamp": "The drift",
+      "title": "Change without control",
+      "text": "Six months in, the project is doing work nobody priced, and there is no clause anyone can point at."
+    }
+  ],
+  "what": [
+    "We construct the commercial side of the deal: decompose the scope, structure the pricing, write the assumptions and exclusions, define change control, and shape the SOW so that what was sold is what gets delivered.",
+    "You set the price level and the margin. We build the structure that defends them."
+  ],
+  "deliverables": [
+    { "name": "Scope decomposition", "fmt": "template", "desc": "The work broken into priceable units, so nothing is sold as a vague whole." },
+    { "name": "Commercial structure options", "fmt": "pdf", "desc": "Two or three pricing models for this deal, with the trade-offs stated honestly." },
+    { "name": "Assumptions and exclusions register", "fmt": "doc", "desc": "Written for a reader with a checklist, because that is who reads it." },
+    { "name": "Change control clause set", "fmt": "doc", "desc": "The mechanism that keeps unpriced work from becoming free work." },
+    { "name": "SOW draft", "fmt": "doc", "desc": "The full statement of work, ready for your counsel's review." }
+  ],
+  "steps": [
+    { "title": "Bring the deal", "text": "We read the solution shape and whatever scope exists, and tell you where it will leak.", "need": "The solution outline and draft scope" },
+    { "title": "Decompose", "text": "The work becomes priceable units with owners and boundaries.", "need": "An hour with the delivery lead" },
+    { "title": "Structure", "text": "We build the pricing model options and pressure test each against how this buyer procures.", "need": "Your pricing authority in the room" },
+    { "title": "Draft the SOW", "text": "Scope, assumptions, exclusions, and change control, written in plain contract-ready language.", "need": "Your legal template" },
+    { "title": "Defend", "text": "Material for the procurement rounds: what moves, what does not, and what each concession costs.", "need": "The negotiation team" }
+  ],
+  "excludes": [
+    "We do not set your price level or your margin. Those are your calls.",
+    "We do not give legal advice. The SOW draft goes to your counsel before it goes anywhere.",
+    "We do not negotiate with your buyer. We arm the people who do.",
+    "We do not invent benchmarks. Where market data is not available, we say so."
+  ],
+  "shape": [
+    { "k": "Format", "v": "Project, running alongside the pursuit" },
+    { "k": "Typical length", "v": "One to three weeks" },
+    { "k": "Also available", "v": "A review pass on an SOW you already drafted" }
+  ],
+  "domains": [
+    { "name": "IT services", "note": "Rate cards, onshore-offshore mix, and service levels are where services deals get cut. Structure decides margin." },
+    { "name": "B2B SaaS", "note": "Subscription, implementation, and success services price differently. Bundling them wrong invites the unbundle." },
+    { "name": "BFSI", "note": "Procurement runs on precedent and audit. Assumptions must be written for a reader with a checklist." },
+    { "name": "Healthcare", "note": "Long cycles and committee sign-offs mean change control matters more than the day-one price." }
+  ],
+  "related": [
+    {
+      "name": "RFP and RFI response",
+      "href": "/services/rfp-response/",
+      "desc": "The response commits you commercially. This service makes sure it commits you on purpose."
+    },
+    {
+      "name": "Security questionnaires and vendor assessments",
+      "href": "/services/security-questionnaires/",
+      "desc": "Security commitments flow into the contract. Both documents must agree."
+    },
+    {
+      "name": "Proposal deck building",
+      "href": "/services/proposal-deck-building/",
+      "desc": "The commercial story the deck tells, backed by a structure that holds."
+    }
+  ]
+}

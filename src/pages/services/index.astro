@@ -1,5 +1,10 @@
 ---
+import { getCollection } from 'astro:content';
 import Base from '../../layouts/Base.astro';
+
+const services = (await getCollection('services')).sort((a, b) => a.data.number.localeCompare(b.data.number));
+const tier1 = services.filter((s) => s.data.tier === 1);
+const tier2 = services.filter((s) => s.data.tier === 2);
 ---
 
 <Base
@@ -20,18 +25,14 @@ import Base from '../../layouts/Base.astro';
     <div class="wrap">
       <div class="sec-head"><span class="sec-tag">Tier 1 / Pursuit support</span><h2>Inside the <span class="u">live deal</span></h2></div>
       <div class="bento">
-        <div class="card c-red"><span class="band"></span><span class="idx">01</span>
-          <h3><a href="/services/rfp-response/">RFP and RFI response</a></h3><p>Requirement extraction, compliance matrices, drafting, and submission readiness. The whole machine.</p>
-        </div>
-        <div class="card c-cobalt"><span class="band"></span><span class="idx">02</span>
-          <h3>Proposal deck building</h3><p>The narrative and the artefact, from executive summary to the version the committee reads alone. Page coming as the build proceeds.</p>
-        </div>
-        <div class="card c-green"><span class="band"></span><span class="idx">03</span>
-          <h3>Security questionnaires and vendor assessments</h3><p>Answer banks, gap identification, evidence mapping. Assessment season, handled. Page coming as the build proceeds.</p>
-        </div>
-        <div class="card c-mustard"><span class="band"></span><span class="idx">04</span>
-          <h3>Pricing and SOW construction</h3><p>Scope, commercial structure, assumptions, and change control that survive procurement. Page coming as the build proceeds.</p>
-        </div>
+        {tier1.map((s) => (
+          <div class={`card c-${s.data.color}`}>
+            <span class="band"></span>
+            <span class="idx">{s.data.number}</span>
+            <h3><a href={`/services/${s.id}/`}>{s.data.name}</a></h3>
+            <p>{s.data.oneliner}</p>
+          </div>
+        ))}
       </div>
     </div>
   </section>
@@ -40,12 +41,14 @@ import Base from '../../layouts/Base.astro';
     <div class="wrap">
       <div class="sec-head"><span class="sec-tag">Tier 2 / Positioning and proof</span><h2>Between <span class="ur">the deals</span></h2></div>
       <div class="bento">
-        <div class="card tier2"><span class="tier-chip">Tier 2 ⚡ Positioning</span><span class="idx">05</span>
-          <h3>Competitive analysis and positioning</h3><p>Incumbent mapping, battlecards, and win themes before the fight starts. Page coming as the build proceeds.</p>
-        </div>
-        <div class="card tier2"><span class="tier-chip">Tier 2 ⚡ Proof</span><span class="idx">06</span>
-          <h3><a href="/services/case-study-development/">Case study and reference development</a></h3><p>The proof material every future pursuit will lean on.</p>
-        </div>
+        {tier2.map((s) => (
+          <div class="card tier2">
+            <span class="tier-chip">Tier 2 ⚡ {s.data.number === '05' ? 'Positioning' : 'Proof'}</span>
+            <span class="idx">{s.data.number}</span>
+            <h3><a href={`/services/${s.id}/`}>{s.data.name}</a></h3>
+            <p>{s.data.oneliner}</p>
+          </div>
+        ))}
       </div>
     </div>
   </section>

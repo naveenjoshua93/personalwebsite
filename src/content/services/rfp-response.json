@@ -53,21 +53,27 @@
     { "k": "Typical length", "v": "Two to six weeks, matched to the RFP clock" },
     { "k": "Also available", "v": "Retained, for teams with steady RFP flow" }
   ],
+  "domains": [
+    { "name": "B2B SaaS", "note": "Mid-market SaaS RFPs lean on questionnaires and integration detail. The matrix keeps the long tail honest." },
+    { "name": "IT services", "note": "Services RFPs score method, team, and transition. The response architecture carries more narrative weight." },
+    { "name": "BFSI", "note": "Compliance annexes and regulatory questions expand the matrix. Precision beats prose." },
+    { "name": "Healthcare", "note": "Expect clinical, privacy, and interoperability sections that need SME time booked early." }
+  ],
   "related": [
     {
       "name": "Proposal deck building",
-      "href": "/services/",
+      "href": "/services/proposal-deck-building/",
       "desc": "The narrative and the artefact for the presented stage of the pursuit.",
       "boundary": "The RFP is the written answer. The deck is the room performance. One narrative, two artefacts."
     },
     {
       "name": "Pricing and SOW construction",
-      "href": "/services/",
+      "href": "/services/pricing-and-sow/",
       "desc": "The commercial structure the response commits you to."
     },
     {
       "name": "Security questionnaires and vendor assessments",
-      "href": "/services/",
+      "href": "/services/security-questionnaires/",
       "desc": "The parallel workstream that usually arrives mid-response."
     }
   ]

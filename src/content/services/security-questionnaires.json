@@ -1,0 +1,78 @@
+{
+  "number": "03",
+  "name": "Security questionnaires and vendor assessments",
+  "shortName": "Security questionnaires",
+  "oneliner": "Answer banks, gap identification, evidence mapping, and drafted responses for questionnaire and assessment season.",
+  "tier": 1,
+  "color": "green",
+  "metaTitle": "Security questionnaires and vendor assessments | Techno War Room",
+  "metaDescription": "We build answer banks, identify gaps, map evidence, and draft responses for security questionnaires and vendor assessments in must-win deals.",
+  "scenarios": [
+    {
+      "stamp": "Mid-deal ambush",
+      "title": "The 400-row spreadsheet",
+      "text": "Procurement forwards a vendor assessment with three tabs, four frameworks, and a due date that ignores everything else the deal needs this week."
+    },
+    {
+      "stamp": "The bottleneck",
+      "title": "One engineer answers everything",
+      "text": "Your most senior security person spends deal-critical weeks copy-pasting last quarter's answers into this quarter's format."
+    },
+    {
+      "stamp": "The risk",
+      "title": "Answers that drift",
+      "text": "Every questionnaire gets slightly different answers. Buyers keep copies, auditors compare notes, and drift becomes a finding."
+    }
+  ],
+  "what": [
+    "We build and run the machinery for security questionnaires and vendor assessments: a structured answer bank, honest gap identification, evidence mapped to every claim, and drafted responses for each new questionnaire that lands.",
+    "Your security owner reviews and approves everything. We do the assembly, the drafting, and the version control."
+  ],
+  "deliverables": [
+    { "name": "Answer bank", "fmt": "template", "desc": "Reusable, approved answers organised by control area, versioned so drift stops." },
+    { "name": "Gap register", "fmt": "pdf", "desc": "Where the honest answer is not yet yes, and the mitigation statement to use meanwhile." },
+    { "name": "Evidence map", "fmt": "template", "desc": "Every claim traced to the policy, report, or certificate that backs it." },
+    { "name": "Drafted response", "fmt": "doc", "desc": "The completed questionnaire, with every uncertain row flagged for your review." }
+  ],
+  "steps": [
+    { "title": "Bring the questionnaire", "text": "We size it on arrival: frameworks in scope, rows that are new, rows the bank already answers.", "need": "The file and the frameworks in scope" },
+    { "title": "Build the bank", "text": "We structure what already exists into reusable, approved answers before drafting anything new.", "need": "Past responses and current policies" },
+    { "title": "Gap and evidence pass", "text": "Honest gaps go in the register with mitigations. Every claim gets its evidence mapped.", "need": "An hour with your security owner" },
+    { "title": "Draft", "text": "We complete the questionnaire from the bank, flagging every row we are not certain of.", "need": "SME answers for the flagged rows" },
+    { "title": "Approve and submit", "text": "Your security owner signs off. The bank absorbs everything new for next time.", "need": "Sign-off authority" }
+  ],
+  "excludes": [
+    "We do not run your security program or write your policies. We document what is true.",
+    "We do not answer yes where the truth is no. Gaps get mitigations, never cover.",
+    "We do not audit or certify anything. We are not an assessor.",
+    "We do not speak to the buyer's security team. Answers go out under your name."
+  ],
+  "shape": [
+    { "k": "Format", "v": "Project per questionnaire, or a standalone bank build" },
+    { "k": "Typical length", "v": "Days to two weeks per questionnaire" },
+    { "k": "Also available", "v": "Retained through assessment season" }
+  ],
+  "domains": [
+    { "name": "B2B SaaS", "note": "SIG, CAIQ, and customer-specific spreadsheets arrive with every mid-market deal. The bank pays for itself by the third one." },
+    { "name": "BFSI", "note": "Expect regulator-driven depth: outsourcing rules, operational resilience, and audit rights get whole sections of their own." },
+    { "name": "Healthcare", "note": "Data handling questions dominate, and answers must describe your actual safeguards, not your roadmap." },
+    { "name": "IT services", "note": "Assessments probe your delivery centres and subcontractors, because client teams inherit your controls." }
+  ],
+  "related": [
+    {
+      "name": "RFP and RFI response",
+      "href": "/services/rfp-response/",
+      "desc": "The workstream this one usually lands in the middle of."
+    },
+    {
+      "name": "Pricing and SOW construction",
+      "href": "/services/pricing-and-sow/",
+      "desc": "Security commitments end up in the contract. The SOW should say the same thing the questionnaire did."
+    },
+    {
+      "name": "Proposal deck building",
+      "href": "/services/proposal-deck-building/",
+      "desc": "The trust story the deck tells should match the answers on file."
+    }
+  ]
+}

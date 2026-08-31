@@ -51,15 +51,21 @@
     { "k": "Best batch", "v": "Three to five stories at a time" },
     { "k": "Also available", "v": "Standing capture, one story after each major delivery" }
   ],
+  "domains": [
+    { "name": "B2B SaaS", "note": "Outcome metrics carry SaaS stories. Where nothing was measured, adoption and timeline tell it instead." },
+    { "name": "IT services", "note": "Delivery stories sell: team shape, method, and what went wrong and got fixed read as credibility." },
+    { "name": "BFSI", "note": "Client names are often unusable. Anonymised stories need enough specificity to stay credible." },
+    { "name": "Healthcare", "note": "Consent and privacy rules shape what can be told. The reference brief does extra work here." }
+  ],
   "related": [
     {
       "name": "Competitive analysis and positioning",
-      "href": "/services/",
+      "href": "/services/competitive-analysis/",
       "desc": "The other half of Tier 2: knowing the rival, and proving yourself."
     },
     {
       "name": "Proposal deck building",
-      "href": "/services/",
+      "href": "/services/proposal-deck-building/",
       "desc": "Where the deck-slide versions of your stories go to work."
     },
     {

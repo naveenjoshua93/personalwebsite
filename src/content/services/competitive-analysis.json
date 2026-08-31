@@ -1,0 +1,77 @@
+{
+  "number": "05",
+  "name": "Competitive analysis and positioning",
+  "shortName": "Competitive analysis",
+  "oneliner": "Incumbent mapping, competitive posture, battlecards, and win themes built before the fight starts.",
+  "tier": 2,
+  "color": "lilac",
+  "metaTitle": "Competitive analysis and positioning | Techno War Room",
+  "metaDescription": "We map incumbents and rivals for must-win pursuits and turn it into working material: battlecards, win themes, and the questions that reframe an evaluation.",
+  "scenarios": [
+    {
+      "stamp": "The incumbent",
+      "title": "Someone already lives there",
+      "text": "The buyer has a vendor. The RFP reads like that vendor wrote it, and it is possible they did."
+    },
+    {
+      "stamp": "The bake-off",
+      "title": "Three finalists, one story",
+      "text": "Every finalist claims the same strengths in the same words. Nobody is positioned. Everybody is merely described."
+    },
+    {
+      "stamp": "The silence",
+      "title": "Losing without a debrief",
+      "text": "Deals keep going to the same rival, and nobody has written down why or what to change."
+    }
+  ],
+  "what": [
+    "We map who you are really up against, in one pursuit or across a segment: the incumbent's grip, each rival's pitch and gaps, and where your honest advantages sit. Then we turn the map into working material: battlecards, win themes, and the questions that make an evaluation ask what your rival cannot answer well.",
+    "Everything is built from public information and your team's field knowledge, and marked clearly where the evidence is thin."
+  ],
+  "deliverables": [
+    { "name": "Competitive map", "fmt": "pdf", "desc": "The field for this pursuit or segment: who holds what, and where the openings are." },
+    { "name": "Battlecards", "fmt": "template", "desc": "One page per rival: their pitch, their gaps, the counters, and the questions to plant." },
+    { "name": "Win themes", "fmt": "pdf", "desc": "The two or three arguments this pursuit should rest on, with the proof each needs." },
+    { "name": "Trap question set", "fmt": "doc", "desc": "Questions your team seeds into the evaluation that read neutral and cut deep." }
+  ],
+  "steps": [
+    { "title": "Frame the fight", "text": "One deal or one segment. We agree the rivals in scope and what a win looks like.", "need": "The target list" },
+    { "title": "Research", "text": "Public sources plus structured interviews with your sellers, who know more than anyone has written down.", "need": "Interview time with your field team" },
+    { "title": "Map and draft", "text": "The competitive map, the battlecards, and the win themes, drafted and sourced.", "need": "Fact corrections as we go" },
+    { "title": "Pressure test", "text": "Your sellers attack the material. What survives goes into the field.", "need": "One review session" }
+  ],
+  "excludes": [
+    "We do not gather intelligence by misrepresentation. Public information and your own knowledge only.",
+    "We do not write disparagement. Battlecards win on substance or not at all.",
+    "We do not guess numbers where there is no source. Thin evidence gets marked as thin.",
+    "We are not a market research subscription. This is working material for pursuits, not a quarterly report."
+  ],
+  "shape": [
+    { "k": "Format", "v": "Short project, run between pursuits" },
+    { "k": "Scope", "v": "Per deal, or per segment" },
+    { "k": "Also available", "v": "A refresh cadence as the field moves" }
+  ],
+  "domains": [
+    { "name": "B2B SaaS", "note": "Review sites, pricing pages, and release notes make SaaS rivals unusually legible. The work is separating signal from marketing." },
+    { "name": "IT services", "note": "Rivals differentiate on people and price. Battlecards centre on delivery model and reference stories." },
+    { "name": "BFSI", "note": "Incumbency is the moat. Displacement themes matter more than feature comparisons." },
+    { "name": "Healthcare", "note": "Validation cycles and switching costs protect incumbents. Positioning leans on the risk of standing still." }
+  ],
+  "related": [
+    {
+      "name": "Proposal deck building",
+      "href": "/services/proposal-deck-building/",
+      "desc": "Win themes become the storyline the deck is built on."
+    },
+    {
+      "name": "Case study and reference development",
+      "href": "/services/case-study-development/",
+      "desc": "Every win theme needs proof. This is where it comes from."
+    },
+    {
+      "name": "RFP and RFI response",
+      "href": "/services/rfp-response/",
+      "desc": "Positioning decides which requirements you emphasise and how."
+    }
+  ]
+}
