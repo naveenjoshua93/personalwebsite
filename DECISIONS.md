@@ -51,3 +51,30 @@ Typefaces: Clash Display (headlines), Switzer (body), IBM Plex Mono (labels), al
 - **The Armory**: a filterable resource library (format x service x domain) for thought leadership PDFs, situation decks, templates, and films. Filter chips in the neo-brutalist style. Only artifacts that exist as real files ship; the taxonomy is built ahead of the content.
 - Interactive features approved for the real build: deal danger diagnostic quiz, work-back planner widget, pursuit glossary, Brick 404 page, and the W-A-R siren easter egg. All client-side, no data capture in v1.
 - Custom crosshair cursor and press-down button interactions sitewide.
+
+## Gate 4: Information architecture (2026-08-31)
+
+**Decision: Variant A, flat and shallow.**
+
+```
+/                      Home (per approved mock)
+/services/             One overview page, both tiers, divider between them
+/services/[slug]/      Six service pages
+/armory/               Filterable library (PDFs, decks, templates, films)
+/armory/[slug]/        One page per artifact
+/insights/             Essays and films
+/insights/[slug]/
+/tools/                Landing for widgets
+/tools/deal-diagnostic/
+/tools/workback-planner/
+/glossary/
+/about/                The practice, "how engagements run" folded in
+/contact/              Booking page
+```
+
+- Primary nav: Services, Armory, Insights, Tools, About, plus Book a call. Footer lists all six services individually, glossary, email.
+- Tier 2 sits on the same services overview below a divider, in the black-card treatment.
+- /approach/ does not exist; it folds into /about/. The four-step play also lives on the home page.
+- Films are insights entries tagged video; the Armory surfaces them via its Video filter. One source of truth.
+- The Armory launches only with artifacts that exist as real files, and hides any filter chip that would return zero results.
+- Nav links to the services overview only; no dropdown.
