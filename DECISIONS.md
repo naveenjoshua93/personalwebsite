@@ -28,8 +28,18 @@ The chosen direction: cream base with a five-colour palette (ink, signal red, co
 - Rules that remain in force: no invented facts of any kind, no em dashes, no client logos, no testimonials, no metrics band, no team page, banned vocabulary list, first person plural.
 - The mascot is an original blocky "brick hero" character drawn as SVG. Actual LEGO imagery or minifigure photos are never used, because the minifigure is LEGO's trademark and using it to brand a commercial service invites a dispute.
 
-**Service list amendment:** objection handling and approver mapping is removed, and security questionnaires is removed from service 4, which becomes vendor assessments. Six services remain: RFP and RFI response, proposal deck building, vendor assessments, pricing and SOW construction, competitive analysis and positioning, case study and reference development.
+**Service list amendment (confirmed by owner):** objection handling and approver mapping is removed. Six services remain in two tiers. Tier 1: RFP and RFI response, proposal deck building, security questionnaires and vendor assessments, pricing and SOW construction. Tier 2: competitive analysis and positioning, case study and reference development.
 
 **Videos:** the site design gains video slots (an ambient loop plus a pattern for workflow demo videos). Demo footage gets produced later; nothing fabricated ships.
 
 Typefaces: Clash Display (headlines), Switzer (body), IBM Plex Mono (labels), all free and self-hostable.
+
+## Gate 3: Stack and hosting (2026-08-31)
+
+**Decision: Astro with static output, hosted on Cloudflare Pages via the GitHub integration.**
+
+- Why Astro: content in files, native MDX, zero client JavaScript unless a component opts in, full control of generated HTML, static build.
+- Why Cloudflare Pages: free plan with unmetered static bandwidth, 500 builds a month, redirect support via _redirects, and free cookie-less Web Analytics, which defers the cookie banner question.
+- Vercel was declined because the Hobby plan prohibits commercial use, making it the only option with a bill, and Next.js ships more client JavaScript than the brief allows. Eleventy plus GitHub Pages was declined for weak MDX support, no redirect handling, and GitHub's terms discouraging business sites.
+- Large video files never live in the repo or on Pages. Ambient loops stay small and self-hosted; workflow demo films go to a video host (YouTube unlisted or Cloudflare Stream) when produced.
+- Videos on the site (owner request): ambient loops, a short home page explainer, and screencast workflow demos. Site copy stays vendor-neutral about AI tooling; no testimonial videos.
