@@ -11,9 +11,34 @@ export async function getStaticPaths() {
 const { entry } = Astro.props;
 const s = entry.data;
 const stepTints = ['', 's-mustard', 's-cyan', 's-lilac', 's-red'];
+
+const site = Astro.site ?? new URL('https://personalwebsite.naveenjoshua93.workers.dev');
+const pageUrl = new URL(`/services/${entry.id}/`, site).href;
+const serviceLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: s.name,
+  description: s.metaDescription,
+  url: pageUrl,
+  provider: { '@type': 'ProfessionalService', name: 'Techno War Room', url: site.href },
+  serviceType: 'Commercial pursuit support',
+};
+const breadcrumbLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: site.href },
+    { '@type': 'ListItem', position: 2, name: 'Services', item: new URL('/services/', site).href },
+    { '@type': 'ListItem', position: 3, name: s.name, item: pageUrl },
+  ],
+};
 ---
 
 <Base title={s.metaTitle} description={s.metaDescription}>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(serviceLd)} />
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbLd)} />
+  </Fragment>
   <header class="svc-hero">
     <span class={`band-top c-band-${s.color}`} style={`background:var(--${s.color})`}></span>
     <span class="svcnum" aria-hidden="true">{s.number}</span>
@@ -163,7 +188,7 @@ const stepTints = ['', 's-mustard', 's-cyan', 's-lilac', 's-red'];
         <span class="sticker cta-stk">No charge to talk</span>
         <h2>Got a live one?</h2>
         <p>If there is a deal on the table, we can tell you quickly whether we can help and what it would involve. Or write to hello@technowarroom.com.</p>
-        <a class="btn" href="mailto:hello@technowarroom.com">Book a call</a>
+        <a class="btn" href="/contact/">Book a call</a>
         <svg class="cta-brick" viewBox="-60 0 240 220" aria-hidden="true"><use href="#brickhero"></use></svg>
       </div>
     </div>

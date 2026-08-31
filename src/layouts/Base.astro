@@ -5,8 +5,32 @@ import '../styles/global.css';
 interface Props {
   title: string;
   description: string;
+  ogImage?: string;
 }
-const { title, description } = Astro.props;
+const { title, description, ogImage = '/og/default.png' } = Astro.props;
+
+const site = Astro.site ?? new URL('https://personalwebsite.naveenjoshua93.workers.dev');
+const canonical = new URL(Astro.url.pathname, site);
+const ogUrl = new URL(ogImage, site);
+
+// Social profiles. Placeholder handles to claim; swap here once the accounts exist.
+const socials = [
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/company/technowarroom' },
+  { label: 'Substack', href: 'https://technowarroom.substack.com' },
+  { label: 'YouTube', href: 'https://www.youtube.com/@technowarroom' },
+  { label: 'X', href: 'https://x.com/technowarroom' },
+];
+
+const orgLd = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfessionalService',
+  name: 'Techno War Room',
+  url: site.href,
+  description:
+    'Commercial pursuit support for B2B SaaS and IT services firms: RFP responses, proposal decks, security questionnaires, pricing and SOW, startup pitch decks, competitive positioning, and case studies.',
+  email: 'hello@technowarroom.com',
+  sameAs: socials.map((s) => s.href),
+};
 ---
 
 <!doctype html>
@@ -16,34 +40,55 @@ const { title, description } = Astro.props;
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     <meta name="description" content={description} />
+    <link rel="canonical" href={canonical.href} />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-    <link href="https://api.fontshare.com/v2/css?f[]=clash-display@500,600,700&f[]=switzer@400,500,600&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="preload" href="/fonts/clash-display-700.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/switzer-400.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/ibm-plex-mono-600.woff2" as="font" type="font/woff2" crossorigin />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Techno War Room" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical.href} />
+    <meta property="og:image" content={ogUrl.href} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogUrl.href} />
+    <script type="application/ld+json" set:html={JSON.stringify(orgLd)} />
+    <slot name="head" />
   </head>
   <body>
+    <a class="skip" href="#main">Skip to content</a>
     <Brick />
 
     <div class="bar">
       <div class="bar-in">
         <a class="logo" href="/"><span class="t">Techno</span> War Room</a>
-        <nav aria-label="Primary">
+        <button class="menu-btn" aria-expanded="false" aria-controls="primary-nav">Menu</button>
+        <nav id="primary-nav" aria-label="Primary">
           <a href="/services/">Services</a>
+          <a href="/about/">About</a>
           <a href="/#armory">Armory</a>
-          <a href="/#feed">Inside</a>
-          <a href="/#pain">The pain</a>
+          <a href="/contact/">Contact</a>
         </nav>
-        <a class="btn" href="/#contact">Book a call</a>
+        <a class="btn" href="/contact/">Book a call</a>
       </div>
     </div>
 
-    <slot />
+    <main id="main">
+      <slot />
+    </main>
 
     <footer>
       <div class="wrap">
         <div class="foot">
           <div class="foot-col">
             <h4>Techno War Room</h4>
-            <a href="/">Home</a>
+            <a href="/about/">About the practice</a>
+            <a href="/contact/">Contact and booking</a>
             <a href="/#armory">The Armory</a>
             <a href="mailto:hello@technowarroom.com">hello@technowarroom.com</a>
           </div>
@@ -59,6 +104,12 @@ const { title, description } = Astro.props;
             <h4>Positioning and proof</h4>
             <a href="/services/competitive-analysis/">Competitive analysis and positioning</a>
             <a href="/services/case-study-development/">Case study and reference development</a>
+            <h4 style="margin-top:22px">Find us</h4>
+            <div class="socials">
+              {socials.map((s) => (
+                <a class="social-chip" href={s.href} rel="me noopener" target="_blank">{s.label}</a>
+              ))}
+            </div>
           </div>
         </div>
         <div class="foot-legal">
@@ -74,6 +125,40 @@ const { title, description } = Astro.props;
     </div>
 
     <script>
+      // mobile menu
+      const btn = document.querySelector('.menu-btn');
+      const nav = document.getElementById('primary-nav');
+      btn?.addEventListener('click', () => {
+        const open = nav?.classList.toggle('open');
+        btn.setAttribute('aria-expanded', String(!!open));
+      });
+      nav?.addEventListener('click', (e) => {
+        if ((e.target as HTMLElement).tagName === 'A') {
+          nav.classList.remove('open');
+          btn?.setAttribute('aria-expanded', 'false');
+        }
+      });
+
+      // lazy videos: only load when near the viewport, never under reduced motion
+      const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const vids = document.querySelectorAll<HTMLVideoElement>('video[data-src]');
+      if (!reduced && 'IntersectionObserver' in window) {
+        const io = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((en) => {
+              if (en.isIntersecting) {
+                const v = en.target as HTMLVideoElement;
+                v.src = v.dataset.src!;
+                v.play().catch(() => {});
+                io.unobserve(v);
+              }
+            });
+          },
+          { rootMargin: '200px' }
+        );
+        vids.forEach((v) => io.observe(v));
+      }
+
       // W-A-R easter egg: typing "war" anywhere sounds the alarm and Brick flies across.
       let buffer = '';
       document.addEventListener('keydown', (e) => {

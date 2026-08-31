@@ -1,0 +1,94 @@
+---
+import Base from '../layouts/Base.astro';
+
+// Scheduler slot. Swap this one constant when the booking provider is decided
+// (Gate 8); the page layout does not change.
+const BOOKING_URL = 'https://cal.com/technowarroom/live-deal';
+
+const faqs = [
+  {
+    q: 'How fast can you start?',
+    a: 'For a live pursuit, we read the material and answer within a day: can we make the date, and what it would take. If the answer is no, we say no fast, which is worth something too.',
+  },
+  {
+    q: 'Who actually does the work?',
+    a: 'The people you speak to. We do not hand your deal to a bench. If a pursuit needs more hands than we have, we say so before starting rather than diluting mid-deal.',
+  },
+  {
+    q: 'Do you work under NDA?',
+    a: 'Yes, and usually before we see anything. Send yours or ask for ours. Deal material never trains anything, never leaves the engagement, and is deleted or returned when the pursuit closes.',
+  },
+  {
+    q: 'What does it cost?',
+    a: 'Engagements are scoped to the pursuit, so the honest answer depends on the workstreams we carry and the clock. The first call is free and ends with a written scope and a number, not a pitch.',
+  },
+  {
+    q: 'Will the buyer know you exist?',
+    a: 'No. We work in your templates, your tools, and your voice. The buyer only ever sees your firm.',
+  },
+];
+
+const faqLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((f) => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a },
+  })),
+};
+---
+
+<Base
+  title="Contact | Techno War Room"
+  description="Book a 30 minute call about a live pursuit, or write to us. We answer within one business day with an honest yes or no."
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(faqLd)} />
+  </Fragment>
+
+  <header class="svc-hero">
+    <span class="band-top" style="background:var(--red)"></span>
+    <div class="wrap">
+      <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> ⚡ Contact</nav>
+      <span class="kicker">No charge ⚡ No pitch ⚡ An honest yes or no</span>
+      <h1>Got a <span class="alarm">live one?</span></h1>
+      <p class="hero-sub">Bring us the deal. We will tell you quickly whether we can help, what we would carry, and what it would take.</p>
+    </div>
+  </header>
+
+  <section>
+    <div class="wrap contact-grid">
+      <div class="book-card">
+        <span class="sticker stk-1" style="top:-18px">Fastest route</span>
+        <h2>Book the call</h2>
+        <p class="meta">30 minutes ⚡ Video call ⚡ Bring the deadline</p>
+        <p>One conversation about your live pursuit: what has landed, when it is due, who decides, and which workstreams are underwater. You leave with our honest read, whether or not you hire us.</p>
+        <a class="btn btn-big" style="margin-top:24px" href={BOOKING_URL} rel="noopener" target="_blank">Pick a time</a>
+        <p style="margin-top:22px;font-size:15px">Rather write first? <a href="mailto:hello@technowarroom.com">hello@technowarroom.com</a>. A line about the deal and the date is enough.</p>
+      </div>
+      <div>
+        <h2 style="font-size:28px">What happens after you reach out</h2>
+        <ul class="after-list">
+          <li><span class="n">1</span>We reply within one business day. No sequence, no newsletter, no chase.</li>
+          <li><span class="n">2</span>If there is a live deal, we ask for the material under NDA and read it properly.</li>
+          <li><span class="n">3</span>You get a written answer: what we would carry, the dates, and the cost. Or a straight no, with the reason.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head"><span class="sec-tag">Before you ask</span><h2>Fair <span class="u">questions</span></h2></div>
+      <div class="faq" style="max-width:820px">
+        {faqs.map((f) => (
+          <details>
+            <summary>{f.q}</summary>
+            <p>{f.a}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+</Base>

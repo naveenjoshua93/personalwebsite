@@ -102,5 +102,13 @@ const rowLabels = ['REQ-1XX', 'REQ-2XX', 'REQ-3XX', 'REQ-4XX', 'REQ-5XX', 'REQ-6
         { duration: LOOP_MS, iterations: Infinity }
       );
     });
+
+    // reduced motion: hold on a mostly filled matrix frame
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      svg.getAnimations({ subtree: true }).forEach((an) => {
+        an.currentTime = 8000;
+        an.pause();
+      });
+    }
   });
 </script>

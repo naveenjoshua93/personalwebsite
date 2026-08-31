@@ -15,12 +15,18 @@ import FilmEngagement from '../components/FilmEngagement.astro';
         <h1>Big deal<br />on the table?<br /><span class="hollow">Sound the</span> <span class="alarm">alarm.</span></h1>
         <p class="hero-sub">Techno War Room is the strike team for must-win pursuits. We build the proposal, the deck, the pricing, and the proof while your team stays in front of the buyer.</p>
         <div class="hero-cta">
-          <a class="btn btn-big" href="#contact">Deploy the war room</a>
+          <a class="btn btn-big" href="/contact/">Deploy the war room</a>
           <a class="link-mono" href="#pain">↓ sound familiar?</a>
         </div>
       </div>
       <div class="hero-art">
-        <div class="frame"><img src="/images/chess.jpg" alt="Two chess knights facing each other" width="1200" height="727" /></div>
+        <div class="frame">
+          <picture>
+            <source srcset="/images/chess.avif" type="image/avif" />
+            <source srcset="/images/chess.webp" type="image/webp" />
+            <img src="/images/chess.jpg" alt="Two chess knights facing each other" width="1200" height="727" fetchpriority="high" />
+          </picture>
+        </div>
         <span class="sticker stk-1">Must-win only</span>
         <span class="sticker stk-2">⚡ Est. 2026</span>
         <svg class="hero-brick" viewBox="-60 0 240 220" aria-label="Brick, the Techno War Room mascot, flying in"><use href="#brickhero"></use></svg>
@@ -228,9 +234,23 @@ import FilmEngagement from '../components/FilmEngagement.astro';
       <div class="wrap">
         <div class="sec-head"><span class="sec-tag">05 / The stakes</span><h2>Where deals <span class="u">get decided</span></h2></div>
         <div class="collage-grid">
-          <figure class="polaroid p1"><video src="/images/city-loop.mp4" autoplay muted loop playsinline poster="/images/boardroom.jpg" aria-label="City timelapse at night"></video><figcaption>The stakes never sleep</figcaption></figure>
-          <figure class="polaroid p2"><img src="/images/king.jpg" alt="A chess king toppling another" width="1200" height="800" loading="lazy" /><figcaption>Every approver has a move. Map it.</figcaption></figure>
-          <figure class="polaroid p3"><img src="/images/gloves.jpg" alt="A pair of black boxing gloves" width="1200" height="1800" loading="lazy" /><figcaption>Seven figures on the line. Gloves on.</figcaption></figure>
+          <figure class="polaroid p1"><video data-src="/images/city-loop.mp4" muted loop playsinline preload="none" poster="/images/boardroom.webp" aria-label="City timelapse at night"></video><figcaption>The stakes never sleep</figcaption></figure>
+          <figure class="polaroid p2">
+            <picture>
+              <source srcset="/images/king.avif" type="image/avif" />
+              <source srcset="/images/king.webp" type="image/webp" />
+              <img src="/images/king.jpg" alt="A chess king toppling another" width="1200" height="800" loading="lazy" />
+            </picture>
+            <figcaption>Every approver has a move. Map it.</figcaption>
+          </figure>
+          <figure class="polaroid p3">
+            <picture>
+              <source srcset="/images/gloves.avif" type="image/avif" />
+              <source srcset="/images/gloves.webp" type="image/webp" />
+              <img src="/images/gloves.jpg" alt="A pair of black boxing gloves" width="1200" height="1800" loading="lazy" />
+            </picture>
+            <figcaption>Seven figures on the line. Gloves on.</figcaption>
+          </figure>
         </div>
       </div>
     </section>
@@ -254,7 +274,7 @@ import FilmEngagement from '../components/FilmEngagement.astro';
         <span class="sticker cta-stk">No charge to talk</span>
         <h2>Got a live one?</h2>
         <p>If there is a deal on the table, we can tell you quickly whether we can help and what it would involve. Or write to hello@technowarroom.com.</p>
-        <a class="btn" href="mailto:hello@technowarroom.com">Book a call</a>
+        <a class="btn" href="/contact/">Book a call</a>
         <svg class="cta-brick" viewBox="-60 0 240 220" aria-hidden="true"><use href="#brickhero"></use></svg>
       </div>
     </div>
@@ -264,11 +284,16 @@ import FilmEngagement from '../components/FilmEngagement.astro';
     const state: Record<string, string> = { fmt: 'all', svc: 'all', dom: 'all' };
     document.querySelectorAll<HTMLElement>('.filters').forEach((row) => {
       const group = row.dataset.group as string;
+      row.querySelectorAll('.chip').forEach((c) => c.setAttribute('aria-pressed', String(c.classList.contains('on'))));
       row.addEventListener('click', (e) => {
         const chip = (e.target as HTMLElement).closest<HTMLElement>('.chip');
         if (!chip) return;
-        row.querySelectorAll('.chip').forEach((c) => c.classList.remove('on'));
+        row.querySelectorAll('.chip').forEach((c) => {
+          c.classList.remove('on');
+          c.setAttribute('aria-pressed', 'false');
+        });
         chip.classList.add('on');
+        chip.setAttribute('aria-pressed', 'true');
         state[group] = chip.dataset.f as string;
         apply();
       });

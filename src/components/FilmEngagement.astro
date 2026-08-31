@@ -466,5 +466,13 @@
           break;
       }
     });
+
+    // reduced motion: hold the film on a composed frame of scene 1
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      svg.getAnimations({ subtree: true }).forEach((an) => {
+        an.currentTime = 4500;
+        an.pause();
+      });
+    }
   });
 </script>
