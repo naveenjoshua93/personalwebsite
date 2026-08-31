@@ -36,6 +36,8 @@ a,button{cursor:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/
 .logo{font-family:var(--display);font-weight:700;font-size:18px;text-transform:uppercase;letter-spacing:0.02em;
       background:var(--ink);color:var(--cream);padding:6px 12px;text-decoration:none;transform:rotate(-1deg);display:inline-block}
 .logo .t{color:var(--cyan)}
+.logo-wrap{display:flex;flex-direction:column;gap:5px;text-decoration:none}
+.slogan{font-family:var(--mono);font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--red);padding-left:2px}
 .bar nav{display:flex;gap:6px}
 .bar nav a{font-family:var(--mono);font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:0.05em;
            color:var(--ink);text-decoration:none;padding:8px 13px;border:2px solid transparent;border-radius:999px}
@@ -133,6 +135,15 @@ h2 .ur{box-shadow:inset 0 -0.28em 0 var(--cyan)}
 .bubble{background:#fff;color:var(--ink);border:3px solid var(--ink);border-radius:14px;padding:10px 12px;
         font-family:var(--display);font-weight:600;font-size:15px;text-transform:uppercase;position:relative;margin-top:14px}
 .bubble::after{content:'';position:absolute;top:-12px;left:50%;border:8px solid transparent;border-bottom-color:var(--ink);transform:translateX(-50%)}
+.pain-door{display:flex;align-items:center;gap:14px;margin:34px 0 18px}
+.pain-door .flag{font-family:var(--mono);font-size:12px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;
+                 border:2.5px solid var(--ink);padding:5px 12px;transform:rotate(-1.5deg);box-shadow:3px 3px 0 var(--ink)}
+.pain-door h3{font-family:var(--display);font-weight:600;font-size:24px;text-transform:uppercase}
+.panel.twist-wide{display:flex;flex-direction:row;align-items:center;justify-content:center;gap:34px;flex-wrap:wrap;
+                  margin-top:26px;background:var(--cobalt);color:var(--cream);text-align:left}
+.panel.twist-wide .stamp{background:var(--mustard);color:var(--ink)}
+.panel.twist-wide p{color:#D9DCF5;max-width:44ch}
+.panel.twist-wide .bubble{margin-top:0}
 
 /* services bento */
 .bento{display:grid;grid-template-columns:repeat(6,1fr);gap:20px}

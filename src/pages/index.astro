@@ -83,7 +83,34 @@ import FilmEngagement from '../components/FilmEngagement.astro';
   <section id="pain">
     <div class="wrap">
       <div class="sec-head"><span class="sec-tag">01 / The pain</span><h2>Any of this <span class="u">sound familiar?</span></h2></div>
-      <div class="comic">
+
+      <div class="pain-door">
+        <span class="flag" style="background:var(--cyan)">Door one</span>
+        <h3>If you're raising</h3>
+      </div>
+      <div class="comic three">
+        <div class="panel">
+          <span class="stamp">The clock</span>
+          <h3>Runway is the deadline</h3>
+          <p>Every week the round drags, the runway shrinks and the leverage flips. The deck was due before the last board call.</p>
+        </div>
+        <div class="panel">
+          <span class="stamp">The pass</span>
+          <h3>Interesting. Then silence.</h3>
+          <p>Partners nod, say impressive, and vanish. The deck shows what you built and never lands why now, why you.</p>
+        </div>
+        <div class="panel">
+          <span class="stamp">Monday, 9:00</span>
+          <h3>The partner meeting, without you</h3>
+          <p>One partner is in. Now your deck has to convince the whole Monday meeting on its own, and nobody there heard your voiceover.</p>
+        </div>
+      </div>
+
+      <div class="pain-door">
+        <span class="flag" style="background:var(--red);color:var(--cream)">Door two</span>
+        <h3>If you're selling</h3>
+      </div>
+      <div class="comic three">
         <div class="panel">
           <span class="stamp">Friday, 5:04 PM</span>
           <h3>The RFP lands</h3>
@@ -99,12 +126,14 @@ import FilmEngagement from '../components/FilmEngagement.astro';
           <h3>Procurement calls</h3>
           <p>Pricing rebuilt line by line. A vendor assessment appears from nowhere. Legal wants the SOW yesterday.</p>
         </div>
-        <div class="panel twist">
-          <span class="stamp">Then</span>
-          <svg class="pow" viewBox="0 0 150 120" aria-hidden="true"><use href="#pow"></use></svg>
-          <svg width="140" height="150" viewBox="0 10 200 210" aria-label="Brick the mascot swooping in"><use href="#brickhero"></use></svg>
-          <div class="bubble">This looks like a job for the war room.</div>
-          <p style="margin-top:12px">We swoop in, take the pen, and carry the workload until the deal is submitted, presented, and signed.</p>
+      </div>
+
+      <div class="panel twist twist-wide">
+        <svg class="pow" viewBox="0 0 150 120" aria-hidden="true" style="width:120px"><use href="#pow"></use></svg>
+        <svg width="130" height="140" viewBox="0 10 200 210" aria-label="Brick the mascot swooping in"><use href="#brickhero"></use></svg>
+        <div>
+          <div class="bubble">Whichever door you came through, this looks like a job for the war room.</div>
+          <p style="margin-top:14px">We swoop in, take the pen, and carry the workload until the round is closed or the deal is signed.</p>
         </div>
       </div>
     </div>
