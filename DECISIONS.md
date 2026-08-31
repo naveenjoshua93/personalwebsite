@@ -52,6 +52,12 @@ Typefaces: Clash Display (headlines), Switzer (body), IBM Plex Mono (labels), al
 - Interactive features approved for the real build: deal danger diagnostic quiz, work-back planner widget, pursuit glossary, Brick 404 page, and the W-A-R siren easter egg. All client-side, no data capture in v1.
 - Custom crosshair cursor and press-down button interactions sitewide.
 
+## Strategic positioning (2026-08-31)
+
+**Decision: startup wedge, enterprise core.** Critical analysis found the wacky brand naturally converts founders and young SaaS sales teams, while the copy targeted mid-market CROs, a mismatch. The owner chose the dual-door model: the raise (pitch decks, competitive analysis, diligence) is the front-door offer with a fast sales cycle and publishable proof; enterprise pursuit support stays the core, higher-lifetime-value business. Home page now opens with two doors ("Raising a round?" and "Defending a seven-figure deal?") directly under the hero, and the engagement film moved to the top of the page. A full startup pivot was considered and declined: it would trade the owner's strongest expertise and recurring-revenue potential for a crowded, transactional market.
+
+**Rename pending:** the owner wants a name starting with "tec", cute, ending in "to" or "y" (tecato.com turned out to be owned by a third party since 2005). Candidate check against the Verisign registry done; decision pending.
+
 ## Gate 8: Contact and booking (2026-08-31)
 
 **Decision: email only for now.** Cal.com, Calendly, and SavvyCal were compared (cost, embed weight, privacy); the owner chose to defer the scheduler. The contact page's primary action is a subject-prefilled mailto. The scheduler slot remains wired: setting BOOKING_URL in src/pages/contact.astro swaps the primary button to a booking link without layout changes. Recommendation on record when ready: Cal.com (free, open source, zero JS as a plain link).

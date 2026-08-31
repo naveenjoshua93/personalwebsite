@@ -80,6 +80,18 @@ h1 .alarm{color:var(--red);text-shadow:4px 4px 0 var(--mustard)}
 .hero-brick{position:absolute;bottom:-30px;left:-70px;width:150px;filter:drop-shadow(5px 5px 0 rgba(20,17,16,.9));animation:fly 3.5s ease-in-out infinite}
 @keyframes fly{0%,100%{transform:rotate(-18deg) translateY(0)}50%{transform:rotate(-14deg) translateY(-14px)}}
 
+/* two doors */
+.doors{display:grid;grid-template-columns:1fr 1fr;gap:24px;padding:40px 0 64px}
+.door{display:block;border:3px solid var(--ink);background:#fff;box-shadow:8px 8px 0 var(--ink);padding:30px;position:relative;
+      text-decoration:none;color:var(--ink);transition:transform .12s,box-shadow .12s}
+.door:hover{transform:translate(-3px,-3px);box-shadow:12px 12px 0 var(--ink)}
+.door:active{transform:translate(4px,4px);box-shadow:0 0 0 var(--ink)}
+.door .band{position:absolute;top:0;left:0;right:0;height:12px}
+.door-tag{font-family:var(--mono);font-size:12px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:#5C564C}
+.door h2{font-size:34px;margin:10px 0 12px}
+.door p{font-size:15.5px;color:#3B3530}
+.door .go{font-family:var(--mono);font-size:13px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--red);margin-top:16px;display:inline-block}
+
 /* must-win banner */
 .mustwin{background:var(--mustard);border-bottom:3px solid var(--ink);padding:56px 0;position:relative;overflow:hidden}
 .mustwin h2{font-size:58px;max-width:none}
@@ -307,6 +319,8 @@ footer{border-top:3px solid var(--ink);padding:32px 0 48px}
   .bar nav a{padding:12px 4px;border-radius:0;border:0;border-bottom:1px solid #E4E0D8;font-size:15px}
   .bar .btn{padding:8px 14px;font-size:14px}
   .contact-grid{grid-template-columns:1fr}
+  .doors{grid-template-columns:1fr}
+  .door h2{font-size:26px}
   .hero-grid,.feed-grid{grid-template-columns:1fr}
   .frame img{height:320px}
   .comic,.comic.three{grid-template-columns:1fr 1fr}
