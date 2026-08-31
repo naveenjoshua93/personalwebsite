@@ -1,0 +1,71 @@
+{
+  "number": "06",
+  "name": "Case study and reference development",
+  "shortName": "Case studies",
+  "oneliner": "We turn work your teams already delivered into the proof material every future pursuit will lean on.",
+  "tier": 2,
+  "color": "cyan",
+  "metaTitle": "Case study and reference development | Techno War Room",
+  "metaDescription": "We interview your delivery teams, verify the facts, and build case studies in the versions pursuits actually need: one-pager, proposal insert, deck slide, and reference brief.",
+  "scenarios": [
+    {
+      "stamp": "The ask",
+      "title": "Buyers want proof",
+      "text": "The evaluation asks for three relevant references and you send three bullet points and a logo you are not sure you are allowed to use."
+    },
+    {
+      "stamp": "The waste",
+      "title": "Great work, no record",
+      "text": "Delivery did something genuinely impressive last year. Nobody wrote it down, and the people who remember it are on other projects now."
+    },
+    {
+      "stamp": "The rebuild",
+      "title": "Same story, worse every time",
+      "text": "Every proposal reconstructs the same case summary from memory, under deadline, in a slightly different and slightly weaker version."
+    }
+  ],
+  "what": [
+    "We interview your delivery team, extract the story, and verify every fact with you before anything is written down as final. Then we build the case study in the versions a pursuit actually needs: the one-pager, the proposal insert, the deck slide, and the reference brief for calls.",
+    "Everything is filed in a library so the next pursuit starts with proof instead of a blank page."
+  ],
+  "deliverables": [
+    { "name": "Case study one-pager", "fmt": "pdf", "desc": "The standalone version for early conversations and attachments." },
+    { "name": "Proposal insert", "fmt": "doc", "desc": "The version formatted to drop straight into an RFP response or proposal document." },
+    { "name": "Deck slide version", "fmt": "deck", "desc": "The one-slide telling for presented pursuits, built to survive a committee." },
+    { "name": "Reference brief", "fmt": "pdf", "desc": "What your reference contact should expect to be asked, and the facts they can stand behind." }
+  ],
+  "steps": [
+    { "title": "Pick the wins", "text": "We shortlist the delivered work with the most pursuit value: relevance, recency, and a story worth telling.", "need": "A list of candidate projects" },
+    { "title": "Interview", "text": "One structured interview per story with the people who delivered it, using our interview kit.", "need": "An hour with each delivery lead" },
+    { "title": "Draft and verify", "text": "We write the story. You verify every fact, figure, and name before it goes anywhere.", "need": "A fact checker with authority" },
+    { "title": "Version and file", "text": "Each verified story becomes its four pursuit-ready versions, filed in your library.", "need": "A home for the library" }
+  ],
+  "excludes": [
+    "We do not invent numbers. If a result was not measured, the story is told without it.",
+    "We do not publish or name clients without your consent process being followed first.",
+    "We do not do brand design. The material lands in your templates, not a new visual identity.",
+    "We do not contact your clients. Reference conversations stay yours."
+  ],
+  "shape": [
+    { "k": "Format", "v": "Short project, run between pursuits" },
+    { "k": "Best batch", "v": "Three to five stories at a time" },
+    { "k": "Also available", "v": "Standing capture, one story after each major delivery" }
+  ],
+  "related": [
+    {
+      "name": "Competitive analysis and positioning",
+      "href": "/services/",
+      "desc": "The other half of Tier 2: knowing the rival, and proving yourself."
+    },
+    {
+      "name": "Proposal deck building",
+      "href": "/services/",
+      "desc": "Where the deck-slide versions of your stories go to work."
+    },
+    {
+      "name": "RFP and RFI response",
+      "href": "/services/rfp-response/",
+      "desc": "Responses cite the library instead of rebuilding proof from memory."
+    }
+  ]
+}

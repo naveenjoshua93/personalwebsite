@@ -78,3 +78,15 @@ Typefaces: Clash Display (headlines), Switzer (body), IBM Plex Mono (labels), al
 - Films are insights entries tagged video; the Armory surfaces them via its Video filter. One source of truth.
 - The Armory launches only with artifacts that exist as real files, and hides any filter chip that would return zero results.
 - Nav links to the services overview only; no dropdown.
+
+## Gate 5: Home page structure (2026-08-31)
+
+**Skipped with owner approval.** The home page structure was decided through the approved Gate 2 mock iterations: hero, must-win banner, marquee, pain comic, six services, Armory, live feed, stakes collage, four-step play, CTA. The Astro home page is a direct port of that mock.
+
+## Gate 6: Service page template (2026-08-31)
+
+**Approved template, ten sections:** hero with tier kicker and giant outlined number, the situation (comic panels, moved to lead), what this is, what you get (deliverable cards with format stamps), how it works (tinted step blocks including "from you" requirements), what this does not include (black card), engagement shape, Armory link, related services with boundary lines, CTA.
+
+Two test pages built to prove the template across tiers: `/services/rfp-response/` (Tier 1, five steps, five deliverables) and `/services/case-study-development/` (Tier 2, four steps, four deliverables). Service content lives in `src/content/services/*.json` so copy is editable without touching components. The remaining four pages await owner review of these two.
+
+Also built: services overview page (two tiers, divider treatment), Brick 404 ("This page lost the deal"), and the W-A-R keyboard easter egg (siren flash, Brick flies across). Fonts remain on CDN until the Gate 9 hardening pass self-hosts them.

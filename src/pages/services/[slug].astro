@@ -1,0 +1,148 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+
+export async function getStaticPaths() {
+  const services = await getCollection('services');
+  return services.map((entry) => ({ params: { slug: entry.id }, props: { entry } }));
+}
+
+const { entry } = Astro.props;
+const s = entry.data;
+const stepTints = ['', 's-mustard', 's-cyan', 's-lilac', 's-red'];
+---
+
+<Base title={s.metaTitle} description={s.metaDescription}>
+  <header class="svc-hero">
+    <span class={`band-top c-band-${s.color}`} style={`background:var(--${s.color})`}></span>
+    <span class="svcnum" aria-hidden="true">{s.number}</span>
+    <div class="wrap">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a> ⚡ <a href="/services/">Services</a> ⚡ {s.shortName}
+      </nav>
+      <span class="kicker">Tier {s.tier} {s.tier === 1 ? '⚡ Pursuit support' : '⚡ Positioning and proof'}</span>
+      <h1>{s.name}</h1>
+      <p class="hero-sub">{s.oneliner}</p>
+      <div class="hero-cta">
+        <a class="btn btn-big" href="#cta">Bring us this problem</a>
+        <a class="link-mono" href="#how">↓ how it works</a>
+      </div>
+    </div>
+  </header>
+
+  <section>
+    <div class="wrap">
+      <div class="sec-head"><span class="sec-tag">01 / The situation</span><h2>When this is <span class="u">your week</span></h2></div>
+      <div class="comic three">
+        {s.scenarios.map((sc) => (
+          <div class="panel">
+            <span class="stamp">{sc.stamp}</span>
+            <h3>{sc.title}</h3>
+            <p>{sc.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head"><span class="sec-tag">02 / The service</span><h2>What this <span class="u">is</span></h2></div>
+      <div class="prose">
+        {s.what.map((p) => <p>{p}</p>)}
+      </div>
+    </div>
+  </section>
+
+  <section style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head"><span class="sec-tag">03 / The goods</span><h2>What you <span class="u">get</span></h2></div>
+      <div class="vault mini">
+        {s.deliverables.map((d) => (
+          <div class="vcard">
+            <span class={`fmt fmt-${d.fmt}`}>{d.fmt}</span>
+            <h3>{d.name}</h3>
+            <p>{d.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section id="how" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head"><span class="sec-tag">04 / The play</span><h2>How it <span class="u">works</span></h2></div>
+      <div class={`steps ${s.steps.length === 5 ? 'five' : ''}`}>
+        {s.steps.map((st, i) => (
+          <div class={`step ${stepTints[i % stepTints.length]}`}>
+            <span class="n">{i + 1}</span>
+            <h3>{st.title}</h3>
+            <p>{st.text}</p>
+            {st.need && <p class="need">From you: {st.need}</p>}
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head"><span class="sec-tag">05 / The line</span><h2>What this does <span class="ur">not include</span></h2></div>
+      <div class="notbox">
+        <h3>Out of scope, on purpose</h3>
+        <ul>
+          {s.excludes.map((x) => <li>{x}</li>)}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head"><span class="sec-tag">06 / The shape</span><h2>Engagement <span class="u">shape</span></h2></div>
+      <div class="shape-grid">
+        {s.shape.map((sh) => (
+          <div class="shape-item">
+            <span class="k">{sh.k}</span>
+            <div class="v">{sh.v}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head"><span class="sec-tag">07 / The armory</span><h2>Ammunition for <span class="u">this fight</span></h2></div>
+      <p style="max-width:66ch;margin:-28px 0 34px;color:#3B3530">The templates and playbooks behind this service live in the Armory, filtered to what applies here.</p>
+      <a class="btn" href={`/#armory`}>Open the Armory ↗</a>
+    </div>
+  </section>
+
+  <section style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head"><span class="sec-tag">08 / Adjacent</span><h2>Related <span class="u">services</span></h2></div>
+      <div class="rel-grid">
+        {s.related.map((r) => (
+          <a class="rel-card" href={r.href}>
+            <h3>{r.name}</h3>
+            <p>{r.desc}</p>
+            {r.boundary && <span class="boundary">Where the line sits: {r.boundary}</span>}
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section id="cta" style="padding-top:0">
+    <div class="wrap">
+      <div class="cta-box">
+        <span class="sticker cta-stk">No charge to talk</span>
+        <h2>Got a live one?</h2>
+        <p>If there is a deal on the table, we can tell you quickly whether we can help and what it would involve. Or write to hello@technowarroom.com.</p>
+        <a class="btn" href="mailto:hello@technowarroom.com">Book a call</a>
+        <svg class="cta-brick" viewBox="-60 0 240 220" aria-hidden="true"><use href="#brickhero"></use></svg>
+      </div>
+    </div>
+  </section>
+</Base>

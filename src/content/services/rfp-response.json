@@ -1,0 +1,74 @@
+{
+  "number": "01",
+  "name": "RFP and RFI response",
+  "shortName": "RFP response",
+  "oneliner": "The whole machine for answering a formal RFP or RFI, from requirement extraction to submission day.",
+  "tier": 1,
+  "color": "red",
+  "metaTitle": "RFP and RFI response support | Techno War Room",
+  "metaDescription": "We run the full RFP response for must-win deals: requirement extraction, compliance matrix, response architecture, drafting, reviews, and submission readiness.",
+  "scenarios": [
+    {
+      "stamp": "Friday, 5:04 PM",
+      "title": "The big one just landed",
+      "text": "Three hundred questions, a three week clock, and a portal that punishes formatting mistakes. The team that has to answer it is already at capacity."
+    },
+    {
+      "stamp": "The pattern",
+      "title": "Losing on technicalities",
+      "text": "Your solution is strong but responses keep getting marked down for missed requirements, thin answers, and compliance gaps nobody caught before submission."
+    },
+    {
+      "stamp": "Every time",
+      "title": "The blank page problem",
+      "text": "Each RFP starts from zero because the last response lives in somebody's inbox. The same answers get rewritten worse, under more pressure."
+    }
+  ],
+  "what": [
+    "We run the full response to a formal RFP or RFI. We extract every requirement into a register, build the compliance matrix, design the response architecture, draft the answers, coordinate your reviewers, and get the package submission ready.",
+    "You stay accountable for the solution and the relationship. We carry the document, the process, and the deadline."
+  ],
+  "deliverables": [
+    { "name": "Requirement register and compliance matrix", "fmt": "template", "desc": "Every requirement extracted, tracked, and mapped to an answer and its evidence." },
+    { "name": "Response architecture", "fmt": "pdf", "desc": "The outline, win themes, and answer ownership plan agreed before drafting starts." },
+    { "name": "Drafted response", "fmt": "doc", "desc": "The full written response in your template and your voice, ready for your review." },
+    { "name": "Review tracker", "fmt": "template", "desc": "Who reviews what, by when, with every comment resolved or explicitly parked." },
+    { "name": "Submission pack", "fmt": "pdf", "desc": "Final compliance check, formatting pass, and the assembled package for the portal or the inbox." }
+  ],
+  "steps": [
+    { "title": "Bring the deal", "text": "We read the RFP and tell you within a day whether we can make the date and what it will take.", "need": "The RFP pack" },
+    { "title": "Extract", "text": "Every requirement goes into the register and the compliance matrix. Nothing gets answered until everything is counted.", "need": "One hour with the deal owner" },
+    { "title": "Architect", "text": "We agree the outline, the win themes, and who owns each answer before a single word is drafted.", "need": "SME time, booked up front" },
+    { "title": "Draft and review", "text": "We write, you correct facts and sharpen claims. The review tracker keeps the loop honest.", "need": "Reviewers who show up" },
+    { "title": "Submit", "text": "Final compliance check against the matrix, formatting pass, packaging, and a submission-day checklist.", "need": "Sign-off authority on call" }
+  ],
+  "excludes": [
+    "We do not invent your solution. Your architects decide what you are selling.",
+    "We do not set your price. That is Pricing and SOW construction, a separate service.",
+    "We do not speak to your buyer. The buyer only ever sees your firm.",
+    "We do not fabricate answers. If a requirement cannot honestly be met, the matrix says so and we write the mitigation."
+  ],
+  "shape": [
+    { "k": "Format", "v": "Project, scoped to one submission" },
+    { "k": "Typical length", "v": "Two to six weeks, matched to the RFP clock" },
+    { "k": "Also available", "v": "Retained, for teams with steady RFP flow" }
+  ],
+  "related": [
+    {
+      "name": "Proposal deck building",
+      "href": "/services/",
+      "desc": "The narrative and the artefact for the presented stage of the pursuit.",
+      "boundary": "The RFP is the written answer. The deck is the room performance. One narrative, two artefacts."
+    },
+    {
+      "name": "Pricing and SOW construction",
+      "href": "/services/",
+      "desc": "The commercial structure the response commits you to."
+    },
+    {
+      "name": "Security questionnaires and vendor assessments",
+      "href": "/services/",
+      "desc": "The parallel workstream that usually arrives mid-response."
+    }
+  ]
+}

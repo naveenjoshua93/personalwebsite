@@ -1,0 +1,90 @@
+---
+import Brick from '../components/Brick.astro';
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description: string;
+}
+const { title, description } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link href="https://api.fontshare.com/v2/css?f[]=clash-display@500,600,700&f[]=switzer@400,500,600&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <Brick />
+
+    <div class="bar">
+      <div class="bar-in">
+        <a class="logo" href="/"><span class="t">Techno</span> War Room</a>
+        <nav aria-label="Primary">
+          <a href="/services/">Services</a>
+          <a href="/#armory">Armory</a>
+          <a href="/#feed">Inside</a>
+          <a href="/#pain">The pain</a>
+        </nav>
+        <a class="btn" href="/#contact">Book a call</a>
+      </div>
+    </div>
+
+    <slot />
+
+    <footer>
+      <div class="wrap">
+        <div class="foot">
+          <div class="foot-col">
+            <h4>Techno War Room</h4>
+            <a href="/">Home</a>
+            <a href="/#armory">The Armory</a>
+            <a href="mailto:hello@technowarroom.com">hello@technowarroom.com</a>
+          </div>
+          <div class="foot-col">
+            <h4>Pursuit support</h4>
+            <a href="/services/rfp-response/">RFP and RFI response</a>
+            <a href="/services/">Proposal deck building</a>
+            <a href="/services/">Security questionnaires and vendor assessments</a>
+            <a href="/services/">Pricing and SOW construction</a>
+          </div>
+          <div class="foot-col">
+            <h4>Positioning and proof</h4>
+            <a href="/services/">Competitive analysis and positioning</a>
+            <a href="/services/case-study-development/">Case study and reference development</a>
+          </div>
+        </div>
+        <div class="foot-legal">
+          <span>Commercial pursuit support for B2B SaaS and IT services</span>
+          <span>&copy; 2026 Techno War Room</span>
+        </div>
+      </div>
+    </footer>
+
+    <div id="siren-overlay" aria-hidden="true">
+      <div class="flash"></div>
+      <svg class="flier" viewBox="-60 0 240 220"><use href="#brickhero"></use></svg>
+    </div>
+
+    <script>
+      // W-A-R easter egg: typing "war" anywhere sounds the alarm and Brick flies across.
+      let buffer = '';
+      document.addEventListener('keydown', (e) => {
+        if (e.target instanceof HTMLInputElement || e.target instanceof HTMLTextAreaElement) return;
+        buffer = (buffer + e.key.toLowerCase()).slice(-3);
+        if (buffer === 'war') {
+          const el = document.getElementById('siren-overlay');
+          if (!el || el.classList.contains('go')) return;
+          el.classList.add('go');
+          setTimeout(() => el.classList.remove('go'), 3200);
+        }
+      });
+    </script>
+  </body>
+</html>

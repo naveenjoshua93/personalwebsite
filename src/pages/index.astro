@@ -1,85 +1,278 @@
 ---
-// Placeholder page to prove the build and deploy pipeline end to end.
-// The real site starts at Gate 4 (information architecture).
+import Base from '../layouts/Base.astro';
 ---
 
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="robots" content="noindex" />
-    <title>Techno War Room</title>
-    <style>
-      :root {
-        --cream: #f3ede1;
-        --ink: #141110;
-        --red: #e6401f;
-        --mustard: #f2b33d;
-        --cyan: #7fd8d4;
-      }
-      * { margin: 0; padding: 0; box-sizing: border-box; }
-      body {
-        background: var(--cream);
-        color: var(--ink);
-        font-family: Arial, Helvetica, sans-serif;
-        min-height: 100vh;
-        display: grid;
-        place-items: center;
-      }
-      main {
-        border: 3px solid var(--ink);
-        box-shadow: 10px 10px 0 var(--ink);
-        background: #fff;
-        padding: 48px 56px;
-        text-align: center;
-        transform: rotate(-1deg);
-        max-width: 520px;
-        margin: 24px;
-      }
-      .logo {
-        display: inline-block;
-        background: var(--ink);
-        color: var(--cream);
-        font-weight: 900;
-        text-transform: uppercase;
-        letter-spacing: 0.02em;
-        padding: 8px 14px;
-        font-size: 18px;
-      }
-      .logo span { color: var(--cyan); }
-      h1 {
-        margin-top: 28px;
-        font-size: 40px;
-        line-height: 1.05;
-        text-transform: uppercase;
-      }
-      h1 em { font-style: normal; color: var(--red); }
-      p {
-        margin-top: 16px;
-        font-size: 16px;
-        color: #3b3530;
-      }
-      .stamp {
-        display: inline-block;
-        margin-top: 24px;
-        font-family: Consolas, monospace;
-        font-size: 12px;
-        letter-spacing: 0.1em;
-        text-transform: uppercase;
-        background: var(--mustard);
-        border: 2px solid var(--ink);
-        padding: 6px 10px;
-        transform: rotate(2deg);
-      }
-    </style>
-  </head>
-  <body>
-    <main>
-      <span class="logo"><span>Techno</span> War Room</span>
-      <h1>The war room is <em>being built.</em></h1>
-      <p>Commercial pursuit support for IT services and B2B technology firms.</p>
-      <span class="stamp">Pipeline check: deployed from GitHub</span>
-    </main>
-  </body>
-</html>
+<Base
+  title="Techno War Room. The strike team for must-win deals"
+  description="Commercial pursuit support for B2B SaaS and IT services firms. We build the proposals, decks, answers, and pricing your biggest deals depend on."
+>
+  <header class="hero">
+    <div class="radar" aria-hidden="true"></div>
+    <div class="wrap hero-grid">
+      <div>
+        <span class="kicker">Commercial pursuit support ⚡ B2B SaaS and IT services</span>
+        <h1>Big deal<br />on the table?<br /><span class="hollow">Sound the</span> <span class="alarm">alarm.</span></h1>
+        <p class="hero-sub">Techno War Room is the strike team for must-win pursuits. We build the proposal, the deck, the pricing, and the proof while your team stays in front of the buyer.</p>
+        <div class="hero-cta">
+          <a class="btn btn-big" href="#contact">Deploy the war room</a>
+          <a class="link-mono" href="#pain">↓ sound familiar?</a>
+        </div>
+      </div>
+      <div class="hero-art">
+        <div class="frame"><img src="/images/chess.jpg" alt="Two chess knights facing each other" width="1200" height="727" /></div>
+        <span class="sticker stk-1">Must-win only</span>
+        <span class="sticker stk-2">⚡ Est. 2026</span>
+        <svg class="hero-brick" viewBox="-60 0 240 220" aria-label="Brick, the Techno War Room mascot, flying in"><use href="#brickhero"></use></svg>
+      </div>
+    </div>
+  </header>
+
+  <div class="mustwin">
+    <div class="wrap" style="position:relative">
+      <div class="siren" aria-hidden="true"></div>
+      <h2><span class="no">We only take</span> <span class="yes">must-win deals.</span></h2>
+      <p>If the deal is routine, we are not your firm. If losing it would hurt for a year, book the call today.</p>
+    </div>
+  </div>
+
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>RFP response</span><span class="dot">⚡</span><span>Proposal decks</span><span class="dot">⚡</span><span>Security questionnaires</span><span class="dot">⚡</span><span>Pricing and SOW</span><span class="dot">⚡</span><span>Battlecards</span><span class="dot">⚡</span><span>Case studies</span><span class="dot">⚡</span>
+      <span>RFP response</span><span class="dot">⚡</span><span>Proposal decks</span><span class="dot">⚡</span><span>Security questionnaires</span><span class="dot">⚡</span><span>Pricing and SOW</span><span class="dot">⚡</span><span>Battlecards</span><span class="dot">⚡</span><span>Case studies</span><span class="dot">⚡</span>
+    </div>
+  </div>
+
+  <section id="pain">
+    <div class="wrap">
+      <div class="sec-head"><span class="sec-tag">01 / The pain</span><h2>Any of this <span class="u">sound familiar?</span></h2></div>
+      <div class="comic">
+        <div class="panel">
+          <span class="stamp">Friday, 5:04 PM</span>
+          <h3>The RFP lands</h3>
+          <p>Three hundred questions. Three weeks. And the internal kickoff is somehow already behind schedule.</p>
+        </div>
+        <div class="panel">
+          <span class="stamp">Meanwhile</span>
+          <h3>Everyone is taken</h3>
+          <p>Your best architect is on two other bids. The one person who writes well is on leave. The deck is a blank file.</p>
+        </div>
+        <div class="panel">
+          <span class="stamp">It gets worse</span>
+          <h3>Procurement calls</h3>
+          <p>Pricing rebuilt line by line. A vendor assessment appears from nowhere. Legal wants the SOW yesterday.</p>
+        </div>
+        <div class="panel twist">
+          <span class="stamp">Then</span>
+          <svg class="pow" viewBox="0 0 150 120" aria-hidden="true"><use href="#pow"></use></svg>
+          <svg width="140" height="150" viewBox="0 10 200 210" aria-label="Brick the mascot swooping in"><use href="#brickhero"></use></svg>
+          <div class="bubble">This looks like a job for the war room.</div>
+          <p style="margin-top:12px">We swoop in, take the pen, and carry the workload until the deal is submitted, presented, and signed.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head"><span class="sec-tag">02 / The arsenal</span><h2>Six ways <span class="u">we show up</span></h2></div>
+      <div class="bento">
+        <div class="card c-red"><span class="band"></span><span class="idx">01</span>
+          <h3><a href="/services/rfp-response/">RFP and RFI response</a></h3><p>Requirement extraction, compliance matrices, drafting, and submission readiness. The whole machine.</p>
+        </div>
+        <div class="card c-cobalt"><span class="band"></span><span class="idx">02</span>
+          <h3><a href="/services/">Proposal deck building</a></h3><p>The narrative and the artefact, from executive summary to the version the committee reads alone.</p>
+        </div>
+        <div class="card c-green"><span class="band"></span><span class="idx">03</span>
+          <h3><a href="/services/">Security questionnaires and vendor assessments</a></h3><p>Answer banks, gap identification, evidence mapping. Assessment season, handled.</p>
+        </div>
+        <div class="card c-mustard"><span class="band"></span><span class="idx">04</span>
+          <h3><a href="/services/">Pricing and SOW construction</a></h3><p>Scope, commercial structure, assumptions, and change control that survive procurement.</p>
+        </div>
+        <div class="card tier2"><span class="tier-chip">Tier 2 ⚡ Positioning</span><span class="idx">05</span>
+          <h3><a href="/services/">Competitive analysis and positioning</a></h3><p>Incumbent mapping, battlecards, and win themes before the fight starts.</p>
+        </div>
+        <div class="card tier2"><span class="tier-chip">Tier 2 ⚡ Proof</span><span class="idx">06</span>
+          <h3><a href="/services/case-study-development/">Case study and reference development</a></h3><p>The proof material every future pursuit will lean on.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="armory">
+    <div class="wrap">
+      <div class="sec-head"><span class="sec-tag">03 / The armory</span><h2>Grab the <span class="u">ammunition</span></h2></div>
+      <p style="max-width:66ch;margin:-28px 0 34px;color:#3B3530">Playbooks, templates, decks, and films from inside the war room. Filter by what you need. Everything here is the real material we use, published as we build it.</p>
+
+      <div class="filters" data-group="fmt">
+        <span class="flabel">Format</span>
+        <button class="chip on" data-f="all">All</button>
+        <button class="chip" data-f="pdf">PDF</button>
+        <button class="chip" data-f="deck">Deck</button>
+        <button class="chip" data-f="template">Template</button>
+        <button class="chip" data-f="video">Video</button>
+      </div>
+      <div class="filters" data-group="svc">
+        <span class="flabel">Service</span>
+        <button class="chip on" data-f="all">All</button>
+        <button class="chip" data-f="rfp">RFP</button>
+        <button class="chip" data-f="decks">Decks</button>
+        <button class="chip" data-f="security">Security</button>
+        <button class="chip" data-f="pricing">Pricing</button>
+        <button class="chip" data-f="competitive">Competitive</button>
+        <button class="chip" data-f="proof">Case studies</button>
+      </div>
+      <div class="filters" data-group="dom">
+        <span class="flabel">Domain</span>
+        <button class="chip on" data-f="all">All</button>
+        <button class="chip" data-f="saas">B2B SaaS</button>
+        <button class="chip" data-f="itservices">IT services</button>
+        <button class="chip" data-f="bfsi">BFSI</button>
+        <button class="chip" data-f="healthcare">Healthcare</button>
+      </div>
+
+      <div class="vault">
+        <div class="vcard" data-fmt="template" data-svc="rfp" data-dom="saas itservices bfsi healthcare">
+          <span class="fmt fmt-template">Template</span>
+          <h3>Compliance matrix template</h3>
+          <p>The requirement-by-requirement tracker we run every RFP through, with status and evidence columns.</p>
+          <div class="vtags"><span class="vtag">RFP</span><span class="vtag">All domains</span></div>
+          <a class="grab" href="#armory">Grab it ↓</a>
+        </div>
+        <div class="vcard" data-fmt="pdf" data-svc="security" data-dom="saas">
+          <span class="fmt fmt-pdf">PDF</span>
+          <h3>Answer bank structure</h3>
+          <p>How to organise reusable security answers so questionnaire season stops being a fire drill.</p>
+          <div class="vtags"><span class="vtag">Security</span><span class="vtag">B2B SaaS</span></div>
+          <a class="grab" href="#armory">Grab it ↓</a>
+        </div>
+        <div class="vcard" data-fmt="deck" data-svc="decks" data-dom="saas itservices">
+          <span class="fmt fmt-deck">Deck</span>
+          <h3>Executive summary skeleton</h3>
+          <p>The page-by-page shape of a proposal deck that survives an evaluation committee reading it alone.</p>
+          <div class="vtags"><span class="vtag">Decks</span><span class="vtag">SaaS + IT services</span></div>
+          <a class="grab" href="#armory">Grab it ↓</a>
+        </div>
+        <div class="vcard" data-fmt="template" data-svc="competitive" data-dom="saas">
+          <span class="fmt fmt-template">Template</span>
+          <h3>Battlecard template</h3>
+          <p>One page per rival: their pitch, their gaps, the trap questions to plant, and the counters.</p>
+          <div class="vtags"><span class="vtag">Competitive</span><span class="vtag">B2B SaaS</span></div>
+          <a class="grab" href="#armory">Grab it ↓</a>
+        </div>
+        <div class="vcard" data-fmt="pdf" data-svc="pricing" data-dom="itservices">
+          <span class="fmt fmt-pdf">PDF</span>
+          <h3>SOW assumptions checklist</h3>
+          <p>The assumptions and change-control clauses that stop scope bleeding after signature.</p>
+          <div class="vtags"><span class="vtag">Pricing</span><span class="vtag">IT services</span></div>
+          <a class="grab" href="#armory">Grab it ↓</a>
+        </div>
+        <div class="vcard" data-fmt="template" data-svc="rfp" data-dom="bfsi healthcare">
+          <span class="fmt fmt-template">Template</span>
+          <h3>Pursuit work-back planner</h3>
+          <p>Enter the submission date and plan backwards: reviews, drafts, sign-offs, and the panic buffer.</p>
+          <div class="vtags"><span class="vtag">RFP</span><span class="vtag">Regulated domains</span></div>
+          <a class="grab" href="#armory">Grab it ↓</a>
+        </div>
+        <div class="vcard" data-fmt="pdf" data-svc="proof" data-dom="saas itservices">
+          <span class="fmt fmt-pdf">PDF</span>
+          <h3>Case study interview kit</h3>
+          <p>The question set that gets a delivery team to tell the story a future buyer actually needs to hear.</p>
+          <div class="vtags"><span class="vtag">Case studies</span><span class="vtag">SaaS + IT services</span></div>
+          <a class="grab" href="#armory">Grab it ↓</a>
+        </div>
+        <div class="vcard" data-fmt="video" data-svc="decks" data-dom="saas itservices bfsi healthcare">
+          <span class="fmt fmt-video">Video</span>
+          <h3>Deck teardown films</h3>
+          <p>Short films where we rebuild weak proposal pages live, from wall of text to committee ready.</p>
+          <div class="vtags"><span class="vtag">Decks</span><span class="vtag">All domains</span></div>
+          <a class="grab" href="#feed">Watch ↓</a>
+        </div>
+      </div>
+      <div class="vault-empty">Nothing in the armory matches that combination yet. Loosen a filter.</div>
+    </div>
+  </section>
+
+  <div class="feed" id="feed">
+    <section>
+      <div class="wrap">
+        <div class="sec-head"><span class="sec-tag">04 / Live feed</span><h2>Inside <span class="ur">the room</span></h2></div>
+        <div class="feed-grid">
+          <div class="screen">
+            <span class="rec">REC</span>
+            <video src="/images/warroom-loop.mp4" autoplay muted loop playsinline poster="/images/chess.jpg"></video>
+          </div>
+          <div>
+            <p class="mono-line">⚡ What the room actually does</p>
+            <p>A pursuit is won move by move. Requirements get extracted, answers get built, the deck gets torn down and rebuilt, and the pricing gets stress tested before procurement ever sees it.</p>
+            <p class="feed-note">This channel is where we will publish short films of the machine at work, from answer banks being assembled to a deck surviving committee.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <div class="collage">
+    <section>
+      <div class="wrap">
+        <div class="sec-head"><span class="sec-tag">05 / The stakes</span><h2>Where deals <span class="u">get decided</span></h2></div>
+        <div class="collage-grid">
+          <figure class="polaroid p1"><video src="/images/city-loop.mp4" autoplay muted loop playsinline poster="/images/boardroom.jpg" aria-label="City timelapse at night"></video><figcaption>The stakes never sleep</figcaption></figure>
+          <figure class="polaroid p2"><img src="/images/king.jpg" alt="A chess king toppling another" width="1200" height="800" loading="lazy" /><figcaption>Every approver has a move. Map it.</figcaption></figure>
+          <figure class="polaroid p3"><img src="/images/gloves.jpg" alt="A pair of black boxing gloves" width="1200" height="1800" loading="lazy" /><figcaption>Seven figures on the line. Gloves on.</figcaption></figure>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <section>
+    <div class="wrap">
+      <div class="sec-head"><span class="sec-tag">06 / The play</span><h2>How an engagement <span class="u">runs</span></h2></div>
+      <div class="steps">
+        <div class="step"><span class="n">1</span><h3>Bring the deal</h3><p>You tell us what is live, what is due, and who decides. We tell you fast whether we can help.</p></div>
+        <div class="step s-mustard"><span class="n">2</span><h3>Set the room</h3><p>We agree the workstreams we carry, the dates, and what we need from your team.</p></div>
+        <div class="step s-cyan"><span class="n">3</span><h3>Build the material</h3><p>We work in your templates and your voice. The buyer only ever sees your firm.</p></div>
+        <div class="step s-red"><span class="n">4</span><h3>Submit and present</h3><p>Response in, deck ready, pricing defensible. Then we hand the room back.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" style="padding-top:0">
+    <div class="wrap">
+      <div class="cta-box">
+        <span class="sticker cta-stk">No charge to talk</span>
+        <h2>Got a live one?</h2>
+        <p>If there is a deal on the table, we can tell you quickly whether we can help and what it would involve. Or write to hello@technowarroom.com.</p>
+        <a class="btn" href="mailto:hello@technowarroom.com">Book a call</a>
+        <svg class="cta-brick" viewBox="-60 0 240 220" aria-hidden="true"><use href="#brickhero"></use></svg>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const state: Record<string, string> = { fmt: 'all', svc: 'all', dom: 'all' };
+    document.querySelectorAll<HTMLElement>('.filters').forEach((row) => {
+      const group = row.dataset.group as string;
+      row.addEventListener('click', (e) => {
+        const chip = (e.target as HTMLElement).closest<HTMLElement>('.chip');
+        if (!chip) return;
+        row.querySelectorAll('.chip').forEach((c) => c.classList.remove('on'));
+        chip.classList.add('on');
+        state[group] = chip.dataset.f as string;
+        apply();
+      });
+    });
+    function apply() {
+      let shown = 0;
+      document.querySelectorAll<HTMLElement>('.vcard').forEach((card) => {
+        const ok =
+          (state.fmt === 'all' || card.dataset.fmt === state.fmt) &&
+          (state.svc === 'all' || card.dataset.svc === state.svc) &&
+          (state.dom === 'all' || (card.dataset.dom ?? '').split(' ').includes(state.dom));
+        card.classList.toggle('hide', !ok);
+        if (ok) shown++;
+      });
+      const empty = document.querySelector<HTMLElement>('.vault-empty');
+      if (empty) empty.style.display = shown ? 'none' : 'block';
+    }
+  </script>
+</Base>
