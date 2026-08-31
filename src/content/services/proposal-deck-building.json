@@ -75,6 +75,12 @@
       "name": "Competitive analysis and positioning",
       "href": "/services/competitive-analysis/",
       "desc": "The win themes the storyline is built on."
+    },
+    {
+      "name": "Startup pitch deck building",
+      "href": "/services/startup-pitch-decks/",
+      "desc": "The same craft aimed at investors instead of enterprise buyers.",
+      "boundary": "Proposal decks win a buyer. Pitch decks win a round. Same discipline, different audience."
     }
   ]
 }

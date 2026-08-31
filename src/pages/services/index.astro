@@ -9,15 +9,15 @@ const tier2 = services.filter((s) => s.data.tier === 2);
 
 <Base
   title="Services | Techno War Room"
-  description="Six ways we support must-win pursuits: RFP response, proposal decks, security questionnaires, pricing and SOW, competitive positioning, and case studies."
+  description="Seven ways we support must-win pursuits: RFP response, proposal decks, security questionnaires, pricing and SOW, startup pitch decks, competitive positioning, and case studies."
 >
   <header class="svc-hero">
     <span class="band-top" style="background:var(--red)"></span>
     <div class="wrap">
       <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> ⚡ Services</nav>
-      <span class="kicker">The arsenal ⚡ Two tiers, six weapons</span>
-      <h1>Six ways <span class="hollow-ink">we show up</span></h1>
-      <p class="hero-sub">Tier 1 runs inside a live pursuit against a deadline. Tier 2 builds your position and proof between pursuits, so the next one starts further ahead.</p>
+      <span class="kicker">The arsenal ⚡ Two tiers, seven weapons</span>
+      <h1>Seven ways <span class="hollow-ink">we show up</span></h1>
+      <p class="hero-sub">Tier 1 runs inside a live pursuit against a deadline, whether the buyer is an enterprise or an investor. Tier 2 builds your position and proof between pursuits, so the next one starts further ahead.</p>
     </div>
   </header>
 
@@ -43,7 +43,7 @@ const tier2 = services.filter((s) => s.data.tier === 2);
       <div class="bento">
         {tier2.map((s) => (
           <div class="card tier2">
-            <span class="tier-chip">Tier 2 ⚡ {s.data.number === '05' ? 'Positioning' : 'Proof'}</span>
+            <span class="tier-chip">Tier 2 ⚡ {s.data.number === '06' ? 'Positioning' : 'Proof'}</span>
             <span class="idx">{s.data.number}</span>
             <h3><a href={`/services/${s.id}/`}>{s.data.name}</a></h3>
             <p>{s.data.oneliner}</p>

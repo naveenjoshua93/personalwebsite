@@ -1,0 +1,80 @@
+{
+  "number": "05",
+  "name": "Startup pitch deck building",
+  "shortName": "Pitch decks",
+  "oneliner": "The fundraising deck for startups: the story, the slides, the short version, and the appendix that survives diligence.",
+  "tier": 1,
+  "color": "cyan",
+  "metaTitle": "Startup pitch deck building | Techno War Room",
+  "metaDescription": "We build startup pitch decks for funding rounds: narrative arc, slide craft, the first-meeting short version, and the diligence appendix, on your real numbers only.",
+  "scenarios": [
+    {
+      "stamp": "The raise",
+      "title": "The round is open",
+      "text": "Investor meetings are getting booked, and the deck is still the product demo with a financing slide bolted on the end."
+    },
+    {
+      "stamp": "The pass",
+      "title": "Polite passes, no signal",
+      "text": "Partners say interesting and go quiet. The deck tells them what you built, and never why this round, why now, why you."
+    },
+    {
+      "stamp": "The forward",
+      "title": "The deck travels without you",
+      "text": "One partner likes you. Now the deck has to convince the Monday partner meeting on its own, with nobody there to talk over it."
+    }
+  ],
+  "what": [
+    "We build the deck for a raise: the narrative arc from problem to why-now to the plan for the money, the slide-by-slide craft, a short version for the first meeting, and the appendix that holds up when diligence starts. Everything rests on your real numbers and real traction, because an invented metric costs you the round the moment it is checked.",
+    "You know the company. We turn it into an argument an investment committee can repeat without you in the room."
+  ],
+  "deliverables": [
+    { "name": "Narrative arc on a page", "fmt": "pdf", "desc": "The whole argument of the raise, agreed before any slide is designed." },
+    { "name": "The pitch deck", "fmt": "deck", "desc": "The full deck for the meeting, built to be presented and to be read." },
+    { "name": "First-meeting short version", "fmt": "deck", "desc": "The tight cut that earns the second meeting." },
+    { "name": "Diligence appendix", "fmt": "doc", "desc": "The numbers, assumptions, and sources behind every claim, ready for the analyst who checks." },
+    { "name": "Q&A prep pack", "fmt": "pdf", "desc": "The questions this deck will provoke and the honest answers to each." }
+  ],
+  "steps": [
+    { "title": "Bring the raise", "text": "Stage, amount, target investors, and timeline. We tell you what the deck has to prove for that audience.", "need": "The round's basic shape" },
+    { "title": "Story first", "text": "The narrative arc on one page, agreed before slides exist. Founders correct it here, cheaply.", "need": "Founder hours, early" },
+    { "title": "Build", "text": "Slide by slide, every claim traced to a real number or clearly framed as a plan.", "need": "Your actual metrics and data" },
+    { "title": "Pressure test", "text": "We attack the deck the way a sceptical partner would, then rebuild what cracked.", "need": "A dry-run audience" },
+    { "title": "Version it", "text": "Full deck, short cut, and the appendix, delivered together and consistent with each other.", "need": "Final sign-off" }
+  ],
+  "excludes": [
+    "We do not invent traction, market sizes, or projections. If a number is a hope, the slide says plan, not fact.",
+    "We do not introduce you to investors or run the raise. We are not a placement agent.",
+    "We do not set your valuation or advise on terms. That conversation is yours and your counsel's.",
+    "We do not rebrand you. The deck lands in your visual identity, sharpened."
+  ],
+  "shape": [
+    { "k": "Format", "v": "Project, scoped to one raise" },
+    { "k": "Typical length", "v": "One to three weeks" },
+    { "k": "Also available", "v": "A refresh pass at each new round" }
+  ],
+  "domains": [
+    { "name": "B2B SaaS", "note": "SaaS raises run on metrics. The argument is which numbers matter at your stage, and why yours point where you say they do." },
+    { "name": "IT services", "note": "Services startups raise on margins and repeatability, not hockey sticks. The story gets built accordingly." },
+    { "name": "BFSI", "note": "Fintech decks carry a regulatory slide that investors will test. It gets built properly, not waved at." },
+    { "name": "Healthcare", "note": "Healthtech raises live and die on validation and the regulatory path. The timeline slide does the heavy lifting." }
+  ],
+  "related": [
+    {
+      "name": "Proposal deck building",
+      "href": "/services/proposal-deck-building/",
+      "desc": "The same craft aimed at enterprise buyers instead of investors.",
+      "boundary": "Pitch decks win a round. Proposal decks win a buyer. Same discipline, different audience, different proof."
+    },
+    {
+      "name": "Case study and reference development",
+      "href": "/services/case-study-development/",
+      "desc": "Traction stories, written so a partner can retell them."
+    },
+    {
+      "name": "Competitive analysis and positioning",
+      "href": "/services/competitive-analysis/",
+      "desc": "The honest answer to the competition slide."
+    }
+  ]
+}
