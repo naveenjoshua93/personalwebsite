@@ -1,0 +1,379 @@
+---
+import Base from '../../layouts/Base.astro';
+
+// Specimen 001: a complete Series A pitch deck for a FICTIONAL company,
+// with an X-ray layer that reveals the argument each slide is making.
+// Everything about Mortar is invented and labelled as such; the craft is real.
+
+const slides = [
+  {
+    n: '01', title: 'Title',
+    xray: 'Nine words, one buyer, no adjectives. If the one-liner needs a comma, it is not finished. This slide plants two nouns, agents and the books, that every later slide reuses.',
+    chain: ['', 'Sets the vocabulary slide 02 will quantify'],
+  },
+  {
+    n: '02', title: 'Problem',
+    xray: 'One pain, measured in the buyer’s own unit: days of senior time, not abstract dollars. A problem slide earns its place when the reader recognises their own calendar in it.',
+    chain: ['“The books” from 01 becomes a measurable grind', 'Sets up the question 03 must answer: why is this suddenly solvable'],
+  },
+  {
+    n: '03', title: 'Why now',
+    xray: 'The only slide that can kill the question “why didn’t this exist already?” It names the hinge: agent reliability crossing the audit threshold, plus a collapsing cost curve. No hinge, no company.',
+    chain: ['The grind in 02 was tolerable until this moment', 'Licenses the mechanism 04 shows'],
+  },
+  {
+    n: '04', title: 'Product',
+    xray: 'Mechanism, not screenshots. The test: can the partner retell it to their Monday meeting from memory? The human approval loop is drawn in deliberately, because it pre-answers the risk question before anyone asks.',
+    chain: ['Cashes the promise of 01 with a drawable system', 'Gives 05 a concrete thing to sell'],
+  },
+  {
+    n: '05', title: 'The wedge',
+    xray: 'A wedge beats a platform pitch at Series A: it makes the first cheque writable. One painful workflow to land, a visible staircase to expand. Platform ambition is implied by the staircase, never claimed.',
+    chain: ['Turns 04’s mechanism into a go-to-market', 'Predicts the numbers 06 must show'],
+  },
+  {
+    n: '06', title: 'Traction',
+    xray: 'Three numbers that corroborate each other: growth, retention, efficiency. Ten metrics is a tell that none of them is good. Every figure here is fictional; the craft on display is which numbers appear and which stay in the appendix.',
+    chain: ['Proof that 05’s wedge is working in the field', 'Provokes the question 07 answers: what stops the big platforms'],
+  },
+  {
+    n: '07', title: 'Moat',
+    xray: 'Most moat slides are astrology. At Series A the honest claim is not a moat but compounding assets: workflow depth, an eval corpus of resolved edge cases, and an audit trail the customer cannot cheaply leave. Name what compounds, not what protects.',
+    chain: ['Answers the platform question raised by 06', 'Sharpened against named rivals in 08'],
+  },
+  {
+    n: '08', title: 'Competition',
+    xray: 'The real rival at this stage is “do nothing”, so it gets the first column. A defendable table beats the fake two-axis quadrant where the author always lands upper right. Every cell here survives a hostile read.',
+    chain: ['Tests 07’s compounding assets against the field', 'Leaves price as the open question 09 closes'],
+  },
+  {
+    n: '09', title: 'Business model',
+    xray: 'Pricing is strategy, not admin. Per-seat pricing punishes the automation you sell; per-workflow pricing scales with value delivered and makes expansion the default motion. The margin note answers the inference-cost question before it is asked.',
+    chain: ['Converts 05’s staircase into revenue mechanics', 'Gives 10’s team something worth executing'],
+  },
+  {
+    n: '10', title: 'Team',
+    xray: 'The team slide sells earned insight, not pedigree. Receipts over logos: the people who could have written slides 02 and 04 from memory. Fictional silhouettes here, because inventing credentialed humans is where specimen decks go wrong.',
+    chain: ['The authors of the pain in 02 and the mechanism in 04', 'Credibility for the plan 11 prices'],
+  },
+  {
+    n: '11', title: 'The ask',
+    xray: 'An ask is a plan with a price. The amount buys named milestones, and the milestones are chosen because they are next-round currency. A use-of-funds bar without milestones is just a burn schedule.',
+    chain: ['Prices the execution 10 promised', 'Funds the story 12 tells'],
+  },
+  {
+    n: '12', title: 'The plan',
+    xray: 'End on the next chapter, never on “thank you”. The close names the Series B story this round intends to earn, which reframes the whole deck as chapter one of something the investor can already see.',
+    chain: ['Closes the loop opened by 01’s nine words', ''],
+  },
+];
+---
+
+<Base
+  title="Specimen 001: an annotated Series A pitch deck | Teclato"
+  description="A complete pitch deck for a fictional AI agents startup, with an X-ray layer showing the argument every slide makes. Downloadable as a real PPTX."
+>
+  <header class="svc-hero">
+    <span class="band-top" style="background:var(--cyan)"></span>
+    <div class="wrap">
+      <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> ⚡ <a href="/#armory">Armory</a> ⚡ Specimen 001</nav>
+      <span class="kicker">The armory ⚡ Deck skill, demonstrated</span>
+      <h1>Specimen 001: <span class="hollow-ink">the anatomy of</span> <span class="alarm">a Series A deck.</span></h1>
+      <p class="hero-sub">Twelve slides for Mortar, an invented AI agents startup. Every company fact and number is fictional and stamped as such. What is real is the craft: flip on X-ray to see the argument each slide is making, and how the twelve link into one chain.</p>
+    </div>
+  </header>
+
+  <section>
+    <div class="wrap">
+      <div class="deckbar">
+        <button class="chip nav-prev" aria-label="Previous slide">← Prev</button>
+        <span class="counter" aria-live="polite"><span class="cur">01</span> / 12 ⚡ <span class="slide-name">Title</span></span>
+        <button class="chip nav-next" aria-label="Next slide">Next →</button>
+        <button class="chip xray-btn" aria-pressed="false">☒ X-ray: off</button>
+      </div>
+
+      <div class="deck" tabindex="0" aria-label="Pitch deck viewer. Use arrow keys to change slides.">
+
+        <!-- S01 title -->
+        <div class="slide s-dark active" data-name="Title">
+          <span class="specimen">Fictional specimen</span>
+          <div class="sl-center">
+            <div class="m-logo">MORTAR<span>■</span></div>
+            <p class="m-one">AI agents that close the books.</p>
+            <p class="m-meta">Series A ⚡ Confidential ⚡ 2026</p>
+          </div>
+        </div>
+
+        <!-- S02 problem -->
+        <div class="slide" data-name="Problem">
+          <span class="specimen">Fictional specimen</span>
+          <h2 class="m-h">The close still runs on heroics.</h2>
+          <div class="m-cols3">
+            <div class="m-stat"><b>5–9 days</b><span>of month-end close, every month, run by the most senior people in finance</span></div>
+            <div class="m-stat"><b>70%</b><span>of that time is matching, reconciling, and chasing, not judgement</span></div>
+            <div class="m-stat"><b>Hiring wall</b><span>controllers are scarce, and the fix so far has been more spreadsheets</span></div>
+          </div>
+          <p class="m-foot">Figures illustrative and fictional</p>
+        </div>
+
+        <!-- S03 why now -->
+        <div class="slide" data-name="Why now">
+          <span class="specimen">Fictional specimen</span>
+          <h2 class="m-h">Agents just crossed the audit threshold.</h2>
+          <div class="m-timeline">
+            <div class="m-tl-item"><b>2023</b><span>LLMs draft text</span></div>
+            <div class="m-tl-item"><b>2024</b><span>Structured outputs make results checkable</span></div>
+            <div class="m-tl-item"><b>2025</b><span>Tool use plus evals make workflows repeatable</span></div>
+            <div class="m-tl-item hot"><b>2026</b><span>Agent runs are reliable and loggable enough to stand in an audit</span></div>
+          </div>
+          <p class="m-note">Meanwhile inference cost per reconciled line has fallen roughly 20x in three years (illustrative)</p>
+        </div>
+
+        <!-- S04 product -->
+        <div class="slide" data-name="Product">
+          <span class="specimen">Fictional specimen</span>
+          <h2 class="m-h">A closed loop, with a human at the gate.</h2>
+          <div class="m-flow">
+            <div class="m-box">ERP + bank feeds</div>
+            <div class="m-arrow">→</div>
+            <div class="m-box hot">Mortar agents<span>match, reconcile, draft entries</span></div>
+            <div class="m-arrow">→</div>
+            <div class="m-box">Controller approves</div>
+            <div class="m-arrow">→</div>
+            <div class="m-box">Immutable audit log</div>
+          </div>
+          <p class="m-note">Nothing posts without a human decision. Every agent step is logged, replayable, and citable.</p>
+        </div>
+
+        <!-- S05 wedge -->
+        <div class="slide" data-name="The wedge">
+          <span class="specimen">Fictional specimen</span>
+          <h2 class="m-h">Land on one painful workflow. Climb.</h2>
+          <div class="m-stairs">
+            <div class="m-stair" style="--i:0"><b>Reconciliation</b><span>the land</span></div>
+            <div class="m-stair" style="--i:1"><b>AP exceptions</b><span>month 3</span></div>
+            <div class="m-stair" style="--i:2"><b>Close checklist</b><span>month 6</span></div>
+            <div class="m-stair" style="--i:3"><b>Reporting drafts</b><span>month 9</span></div>
+          </div>
+          <p class="m-note">Each step is sold to the same buyer, on the same audit trail, with no new procurement cycle.</p>
+        </div>
+
+        <!-- S06 traction -->
+        <div class="slide" data-name="Traction">
+          <span class="specimen">Fictional specimen</span>
+          <h2 class="m-h">Three numbers that agree with each other.</h2>
+          <div class="m-cols3">
+            <div class="m-stat big"><b>$1.7M ARR</b><span>3.4x year over year, 14 mid-market customers</span></div>
+            <div class="m-stat big"><b>128% NRR</b><span>the staircase is being climbed without new sales cycles</span></div>
+            <div class="m-stat big"><b>11 months</b><span>CAC payback, holding as ACV grows</span></div>
+          </div>
+          <p class="m-foot">All figures fictional. The craft is which three numbers appear, and that they corroborate.</p>
+        </div>
+
+        <!-- S07 moat -->
+        <div class="slide" data-name="Moat">
+          <span class="specimen">Fictional specimen</span>
+          <h2 class="m-h">What compounds while we sleep.</h2>
+          <ul class="m-list">
+            <li><b>Workflow depth.</b> Every deployed workflow encodes a customer&rsquo;s edge cases; ripping it out means re-teaching someone else.</li>
+            <li><b>The eval corpus.</b> Every resolved exception becomes a test. Reliability compounds with volume, and volume is ours.</li>
+            <li><b>The audit trail.</b> Auditors learn to read Mortar logs. Switching means re-explaining a year of judgement calls.</li>
+          </ul>
+        </div>
+
+        <!-- S08 competition -->
+        <div class="slide" data-name="Competition">
+          <span class="specimen">Fictional specimen</span>
+          <h2 class="m-h">The honest field.</h2>
+          <table class="m-table">
+            <thead><tr><th></th><th>Do nothing</th><th>Build in-house</th><th>RPA incumbents</th><th>Point AI tools</th><th class="hot">Mortar</th></tr></thead>
+            <tbody>
+              <tr><td>Owned by finance</td><td>—</td><td>No, owned by eng</td><td>No, owned by IT</td><td>Partly</td><td class="hot">Yes</td></tr>
+              <tr><td>Audit-grade log</td><td>—</td><td>Build it yourself</td><td>Screen-level only</td><td>Rarely</td><td class="hot">Native</td></tr>
+              <tr><td>Live in</td><td>—</td><td>Quarters</td><td>Months</td><td>Weeks</td><td class="hot">Weeks</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- S09 model -->
+        <div class="slide" data-name="Business model">
+          <span class="specimen">Fictional specimen</span>
+          <h2 class="m-h">Priced per workflow, because seats punish automation.</h2>
+          <div class="m-cols3">
+            <div class="m-stat"><b>$2k</b><span>per workflow per month</span></div>
+            <div class="m-stat"><b>~5 workflows</b><span>average by month 9, so ~$120k ACV</span></div>
+            <div class="m-stat"><b>78%</b><span>gross margin, inference costs included</span></div>
+          </div>
+          <p class="m-note">Expansion is the default motion: the buyer adds workflows, never negotiates seats.</p>
+        </div>
+
+        <!-- S10 team -->
+        <div class="slide" data-name="Team">
+          <span class="specimen">Fictional specimen</span>
+          <h2 class="m-h">We have lived this close.</h2>
+          <div class="m-cols3">
+            <div class="m-person"><div class="m-sil" aria-hidden="true"></div><b>CEO (fictional)</b><span>Ran a 40-person finance ops org. Owned the 9-day close this deck opens with.</span></div>
+            <div class="m-person"><div class="m-sil" aria-hidden="true"></div><b>CTO (fictional)</b><span>Shipped agent evaluation infrastructure at scale. Believes reliability is a dataset, not a demo.</span></div>
+            <div class="m-person"><div class="m-sil" aria-hidden="true"></div><b>Founding eng (fictional)</b><span>A decade of ERP integrations. Knows where the bodies are buried in the ledgers.</span></div>
+          </div>
+        </div>
+
+        <!-- S11 ask -->
+        <div class="slide" data-name="The ask">
+          <span class="specimen">Fictional specimen</span>
+          <h2 class="m-h">$8M buys three milestones.</h2>
+          <div class="m-usebar" role="img" aria-label="Use of funds: engineering 45 percent, go to market 35 percent, security and compliance 20 percent">
+            <span style="width:45%">Engineering 45%</span><span style="width:35%" class="mid">Go-to-market 35%</span><span style="width:20%" class="end">Security 20%</span>
+          </div>
+          <ul class="m-list">
+            <li><b>$6M ARR</b> within 24 months, on the existing wedge motion.</li>
+            <li><b>Three expansion modules</b> shipped and priced.</li>
+            <li><b>SOC 2 Type II</b> plus the audit-partner program, because trust is the product.</li>
+          </ul>
+        </div>
+
+        <!-- S12 plan -->
+        <div class="slide s-dark" data-name="The plan">
+          <span class="specimen">Fictional specimen</span>
+          <div class="sl-center">
+            <p class="m-one" style="max-width:24ch">The Series B story we intend to earn: the system of record for agent-run finance work.</p>
+            <p class="m-meta">Mortar ⚡ fictional ⚡ specimen by Teclato</p>
+          </div>
+        </div>
+
+        <!-- X-ray overlay -->
+        <aside class="xr" aria-live="polite">
+          <div class="xr-tag">X-ray ⚡ The argument</div>
+          <p class="xr-text"></p>
+          <div class="xr-chain">
+            <span class="xr-prev"></span>
+            <span class="xr-next"></span>
+          </div>
+        </aside>
+      </div>
+
+      <p class="deck-hint">← → arrow keys work too ⚡ X-ray shows what each slide is doing and why</p>
+    </div>
+  </section>
+
+  <section style="padding-top:0">
+    <div class="wrap contact-grid">
+      <div class="book-card">
+        <span class="sticker stk-1" style="top:-18px">Real file</span>
+        <h2>Take the specimen home</h2>
+        <p class="meta">PPTX ⚡ 12 slides ⚡ Fictional and labelled</p>
+        <p>The same deck as an actual PowerPoint file, cleanly built, no annotations. Use the structure; replace Mortar with your company and your real numbers.</p>
+        <a class="btn btn-big" style="margin-top:24px" href="/files/mortar-specimen-deck.pptx" download>Download the deck</a>
+      </div>
+      <div>
+        <h2 style="font-size:28px">Why a fictional company</h2>
+        <p style="margin-top:14px;color:#3B3530;max-width:56ch">We publish no client work and invent no client history. A specimen built for an invented company shows the craft honestly: the argument chain, the slide discipline, the numbers that belong together. Your deck gets the same anatomy with your real facts. That service is <a href="/services/startup-pitch-decks/">startup pitch deck building</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <script define:vars={{ slides }}>
+    const deck = document.querySelector('.deck');
+    const els = [...deck.querySelectorAll('.slide')];
+    const xr = deck.querySelector('.xr');
+    let cur = 0;
+    let xray = false;
+
+    function render() {
+      els.forEach((s, i) => s.classList.toggle('active', i === cur));
+      document.querySelector('.counter .cur').textContent = slides[cur].n;
+      document.querySelector('.slide-name').textContent = slides[cur].title;
+      xr.querySelector('.xr-text').textContent = slides[cur].xray;
+      xr.querySelector('.xr-prev').textContent = slides[cur].chain[0] ? '← ' + slides[cur].chain[0] : '';
+      xr.querySelector('.xr-next').textContent = slides[cur].chain[1] ? slides[cur].chain[1] + ' →' : '';
+      deck.classList.toggle('xray', xray);
+      const btn = document.querySelector('.xray-btn');
+      btn.textContent = xray ? '☑ X-ray: on' : '☒ X-ray: off';
+      btn.setAttribute('aria-pressed', String(xray));
+      btn.classList.toggle('on', xray);
+    }
+    const move = (d) => { cur = (cur + d + els.length) % els.length; render(); };
+    document.querySelector('.nav-prev').addEventListener('click', () => move(-1));
+    document.querySelector('.nav-next').addEventListener('click', () => move(1));
+    document.querySelector('.xray-btn').addEventListener('click', () => { xray = !xray; render(); });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight') move(1);
+      if (e.key === 'ArrowLeft') move(-1);
+      if (e.key.toLowerCase() === 'x') { xray = !xray; render(); }
+    });
+    render();
+  </script>
+
+  <style>
+    /* Viewer chrome (Teclato) */
+    .deckbar{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:18px}
+    .counter{font-family:var(--mono);font-size:13px;letter-spacing:0.08em;text-transform:uppercase}
+    .xray-btn{margin-left:auto}
+    .deck{position:relative;border:3px solid var(--ink);box-shadow:12px 12px 0 var(--ink);background:#fff;
+          aspect-ratio:16/9;overflow:hidden;container-type:inline-size;outline-offset:4px}
+    .deck-hint{font-family:var(--mono);font-size:12px;letter-spacing:0.06em;text-transform:uppercase;color:#5C564C;margin-top:16px}
+
+    /* X-ray overlay */
+    .xr{position:absolute;left:0;right:0;bottom:0;background:rgba(16,20,27,0.94);color:#EDF0F6;padding:2.6cqw 3cqw;
+        transform:translateY(105%);transition:transform .25s ease;border-top:3px solid var(--red)}
+    .deck.xray .xr{transform:translateY(0)}
+    .xr-tag{font-family:var(--mono);font-size:1.35cqw;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--red);margin-bottom:1cqw}
+    .xr-text{font-family:var(--sans);font-size:1.75cqw;line-height:1.5;max-width:75cqw}
+    .xr-chain{display:flex;justify-content:space-between;gap:2cqw;margin-top:1.4cqw;font-family:var(--mono);font-size:1.25cqw;color:#8A93A6;text-transform:uppercase;letter-spacing:0.05em}
+
+    /* ===== Mortar: the specimen's own quiet design language ===== */
+    .slide{position:absolute;inset:0;display:none;background:#FDFDFB;color:#10141B;padding:5cqw 6cqw;font-family:var(--sans)}
+    .slide.active{display:block}
+    .slide.s-dark{background:#10141B;color:#FDFDFB}
+    .specimen{position:absolute;top:2.2cqw;right:2.6cqw;font-family:var(--mono);font-size:1.15cqw;letter-spacing:0.14em;
+              text-transform:uppercase;color:#B23A1B;border:1px solid #B23A1B;padding:0.4cqw 0.9cqw;opacity:.85}
+    .sl-center{height:100%;display:flex;flex-direction:column;justify-content:center;gap:2.2cqw}
+    .m-logo{font-family:var(--display);font-weight:700;font-size:6cqw;letter-spacing:0.04em}
+    .m-logo span{color:#2B3FD8}
+    .m-one{font-size:3.4cqw;font-weight:500;line-height:1.25;max-width:30ch}
+    .m-meta{font-family:var(--mono);font-size:1.3cqw;letter-spacing:0.12em;text-transform:uppercase;color:#8A93A6}
+    .m-h{font-size:3.6cqw;font-weight:600;line-height:1.15;letter-spacing:-0.01em;max-width:26ch;margin-bottom:3.4cqw}
+    .m-cols3{display:grid;grid-template-columns:repeat(3,1fr);gap:2.4cqw}
+    .m-stat{border-top:0.3cqw solid #2B3FD8;padding-top:1.6cqw}
+    .m-stat b{display:block;font-size:3cqw;font-weight:600}
+    .m-stat.big b{font-size:3.6cqw}
+    .m-stat span{display:block;font-size:1.5cqw;color:#4A5261;margin-top:0.8cqw;line-height:1.45}
+    .m-foot,.m-note{position:absolute;bottom:3cqw;left:6cqw;right:6cqw;font-size:1.3cqw;color:#8A93A6;font-family:var(--mono)}
+    .m-note{font-family:var(--sans);font-size:1.6cqw;color:#4A5261}
+    .m-timeline{display:grid;grid-template-columns:repeat(4,1fr);gap:1.8cqw}
+    .m-tl-item{border-left:0.3cqw solid #C9CEDA;padding-left:1.4cqw}
+    .m-tl-item b{display:block;font-family:var(--mono);font-size:1.5cqw;color:#8A93A6}
+    .m-tl-item span{display:block;font-size:1.7cqw;line-height:1.4;margin-top:0.7cqw}
+    .m-tl-item.hot{border-color:#2B3FD8}
+    .m-tl-item.hot b{color:#2B3FD8}
+    .m-flow{display:flex;align-items:stretch;gap:1.2cqw}
+    .m-box{flex:1;border:0.22cqw solid #10141B;padding:1.8cqw 1.4cqw;font-size:1.7cqw;font-weight:500;display:flex;flex-direction:column;justify-content:center;gap:0.6cqw;text-align:center}
+    .m-box span{font-size:1.35cqw;font-weight:400;color:#4A5261}
+    .m-box.hot{background:#2B3FD8;color:#fff;border-color:#2B3FD8}
+    .m-box.hot span{color:#D9DCF5}
+    .m-arrow{align-self:center;font-size:2.2cqw;color:#8A93A6}
+    .m-stairs{display:flex;align-items:flex-end;gap:1.6cqw;height:46cqh}
+    .m-stair{flex:1;background:#EDF0F6;border:0.22cqw solid #10141B;padding:1.4cqw;display:flex;flex-direction:column;justify-content:flex-end;gap:0.5cqw;
+             height:calc(34% + var(--i) * 22%)}
+    .m-stair b{font-size:1.8cqw}
+    .m-stair span{font-family:var(--mono);font-size:1.2cqw;color:#4A5261;text-transform:uppercase;letter-spacing:0.06em}
+    .m-list{list-style:none;display:flex;flex-direction:column;gap:2cqw;max-width:72cqw}
+    .m-list li{font-size:2cqw;line-height:1.5;color:#4A5261;border-left:0.3cqw solid #2B3FD8;padding-left:1.8cqw}
+    .m-list li b{color:#10141B}
+    .m-table{width:100%;border-collapse:collapse;font-size:1.55cqw}
+    .m-table th,.m-table td{border:0.16cqw solid #C9CEDA;padding:1.2cqw 1.1cqw;text-align:left}
+    .m-table th{font-family:var(--mono);font-size:1.25cqw;text-transform:uppercase;letter-spacing:0.06em;color:#4A5261}
+    .m-table .hot{background:#2B3FD8;color:#fff;border-color:#2B3FD8}
+    .m-person .m-sil{width:6cqw;height:6cqw;border-radius:50%;background:linear-gradient(180deg,#C9CEDA,#8A93A6);margin-bottom:1.2cqw}
+    .m-person b{display:block;font-size:1.9cqw}
+    .m-person span{display:block;font-size:1.45cqw;color:#4A5261;line-height:1.5;margin-top:0.6cqw}
+    .m-usebar{display:flex;height:5cqw;margin-bottom:3cqw;font-family:var(--mono);font-size:1.25cqw;color:#fff;text-transform:uppercase;letter-spacing:0.04em}
+    .m-usebar span{background:#2B3FD8;display:flex;align-items:center;padding-left:1.2cqw;white-space:nowrap;overflow:hidden}
+    .m-usebar .mid{background:#10141B}
+    .m-usebar .end{background:#8A93A6}
+    @media (max-width:700px){
+      .deckbar{gap:8px}
+      .xr-text{font-size:2.4cqw}
+    }
+  </style>
+</Base>
